@@ -31,6 +31,7 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             dataGridView1 = new DataGridView();
             button1 = new Button();
+            richTextBox1 = new RichTextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -56,7 +57,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(312, 35);
+            button1.Location = new Point(511, 68);
             button1.Name = "button1";
             button1.Size = new Size(178, 52);
             button1.TabIndex = 1;
@@ -64,11 +65,21 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // richTextBox1
+            // 
+            richTextBox1.Dock = DockStyle.Left;
+            richTextBox1.Location = new Point(0, 0);
+            richTextBox1.Name = "richTextBox1";
+            richTextBox1.Size = new Size(306, 213);
+            richTextBox1.TabIndex = 2;
+            richTextBox1.Text = "";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(richTextBox1);
             Controls.Add(button1);
             Controls.Add(dataGridView1);
             Name = "Form1";
@@ -81,5 +92,6 @@
 
         private DataGridView dataGridView1;
         private Button button1;
+        private RichTextBox richTextBox1;
     }
 }
