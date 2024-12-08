@@ -54,14 +54,15 @@ namespace AttendanceSeekers_client
                     if (responseData.roles.Contains(getRole))
                     {
                         GlobalConfig.Instance.Token = responseData.Token;
+                        // Display the token in a textbox or use it as needed
+                        MessageBox.Show($"Token is {GlobalConfig.Instance.Token}", "TOKEN", MessageBoxButtons.OK);
                     }
                     else
                     {
                         MessageBox.Show($"Make sure to login with your '{getRole}' account.", "Role Check", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
-                // Display the token in a textbox or use it as needed
-                //MessageBox.Show($"Token is {token}","TOKEN" ,MessageBoxButtons.OK);
+                
 
                 else
                 {
