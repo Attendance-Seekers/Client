@@ -6,7 +6,8 @@ public class GlobalConfig
     private static readonly object _lock = new object();
 
     public HttpClient HttpClient { get; private set; }
-
+    public string Token { get; set; }
+    public string role { get; set; }
     private GlobalConfig()
     {
         HttpClient = new HttpClient

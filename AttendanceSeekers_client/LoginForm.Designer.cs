@@ -30,16 +30,16 @@
         {
             label1 = new Label();
             label2 = new Label();
-            userTextBox = new RichTextBox();
-            passTextBox = new RichTextBox();
             Login_button = new Button();
             label3 = new Label();
+            passTextBox = new TextBox();
+            userTextBox = new TextBox();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Showcard Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Showcard Gothic", 18F, FontStyle.Bold);
             label1.Location = new Point(346, 196);
             label1.Name = "label1";
             label1.Size = new Size(180, 37);
@@ -49,39 +49,17 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Showcard Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Showcard Gothic", 18F, FontStyle.Bold);
             label2.Location = new Point(336, 346);
             label2.Name = "label2";
             label2.Size = new Size(190, 37);
             label2.TabIndex = 2;
             label2.Text = "Password";
             // 
-            // userTextBox
-            // 
-            userTextBox.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            userTextBox.ForeColor = Color.Silver;
-            userTextBox.Location = new Point(543, 192);
-            userTextBox.Name = "userTextBox";
-            userTextBox.Size = new Size(470, 47);
-            userTextBox.TabIndex = 3;
-            userTextBox.Text = "Enter UserName";
-            userTextBox.Click += userTextBox_Click;
-            // 
-            // passTextBox
-            // 
-            passTextBox.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            passTextBox.ForeColor = Color.Silver;
-            passTextBox.Location = new Point(543, 336);
-            passTextBox.Name = "passTextBox";
-            passTextBox.Size = new Size(470, 47);
-            passTextBox.TabIndex = 4;
-            passTextBox.Text = "Enter Password";
-            passTextBox.Click += passTextBox_Click;
-            // 
             // Login_button
             // 
             Login_button.BackColor = Color.MidnightBlue;
-            Login_button.Font = new Font("Showcard Gothic", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Login_button.Font = new Font("Showcard Gothic", 24F, FontStyle.Bold);
             Login_button.ForeColor = Color.Transparent;
             Login_button.Location = new Point(477, 510);
             Login_button.Name = "Login_button";
@@ -94,27 +72,54 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Showcard Gothic", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Font = new Font("Showcard Gothic", 36F, FontStyle.Bold);
             label3.Location = new Point(543, 55);
             label3.Name = "label3";
             label3.Size = new Size(222, 74);
             label3.TabIndex = 6;
             label3.Text = "LOG IN";
             // 
+            // passTextBox
+            // 
+            passTextBox.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold);
+            passTextBox.ForeColor = Color.Silver;
+            passTextBox.Location = new Point(538, 336);
+            passTextBox.Multiline = true;
+            passTextBox.Name = "passTextBox";
+            passTextBox.PasswordChar = '*';
+            passTextBox.Size = new Size(475, 47);
+            passTextBox.TabIndex = 7;
+            passTextBox.Text = "Enter Password";
+            passTextBox.Enter += passTextBox_Enter_1;
+            // 
+            // userTextBox
+            // 
+            userTextBox.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold);
+            userTextBox.ForeColor = Color.Silver;
+            userTextBox.Location = new Point(538, 186);
+            userTextBox.Multiline = true;
+            userTextBox.Name = "userTextBox";
+            userTextBox.Size = new Size(475, 47);
+            userTextBox.TabIndex = 8;
+            userTextBox.Text = "Enter UserName";
+            userTextBox.Enter += userTextBox_Enter_1;
+            // 
             // LoginForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleDimensions = new SizeF(120F, 120F);
+            AutoScaleMode = AutoScaleMode.Dpi;
+            AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.Black;
             ClientSize = new Size(1348, 721);
+            Controls.Add(userTextBox);
+            Controls.Add(passTextBox);
             Controls.Add(label3);
             Controls.Add(Login_button);
-            Controls.Add(passTextBox);
-            Controls.Add(userTextBox);
             Controls.Add(label2);
             Controls.Add(label1);
             ForeColor = Color.Transparent;
             Name = "LoginForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "LoginForm";
             FormClosing += LoginForm_FormClosing;
             ResumeLayout(false);
@@ -124,9 +129,9 @@
         #endregion
         private Label label1;
         private Label label2;
-        private RichTextBox userTextBox;
-        private RichTextBox passTextBox;
         private Button Login_button;
         private Label label3;
+        private TextBox passTextBox;
+        private TextBox userTextBox;
     }
 }

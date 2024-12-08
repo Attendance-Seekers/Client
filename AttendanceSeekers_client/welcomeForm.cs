@@ -20,6 +20,7 @@ namespace AttendanceSeekers_client
 
         private void admin_button_Click(object sender, EventArgs e)
         {
+            GlobalConfig.Instance.role = "Admin";
             LoginForm loginForm = new LoginForm();
             this.Hide();
 
@@ -31,6 +32,7 @@ namespace AttendanceSeekers_client
 
         private void teacher_button_Click(object sender, EventArgs e)
         {
+            GlobalConfig.Instance.role = "Teacher";
             LoginForm loginForm = new LoginForm();
             this.Hide();
 
@@ -44,6 +46,7 @@ namespace AttendanceSeekers_client
 
         private void parent_button_Click(object sender, EventArgs e)
         {
+            GlobalConfig.Instance.role = "Parent";
             LoginForm loginForm = new LoginForm();
             this.Hide();
             loginForm.ShowDialog();
