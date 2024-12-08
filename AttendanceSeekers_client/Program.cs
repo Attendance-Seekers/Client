@@ -12,6 +12,8 @@ namespace AttendanceSeekers_client
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new welcomeForm());
+        
+        
         }
     }
 }
