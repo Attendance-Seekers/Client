@@ -57,7 +57,11 @@ namespace AttendanceSeekers_client
 
         private void student_button_Click(object sender, EventArgs e)
         {
-
+            GlobalConfig.Instance.role = "Student";
+            RegisterForm registerForm = new RegisterForm();
+            this.Hide();
+            registerForm.ShowDialog();
+            this.Close();
         }
     }
 }

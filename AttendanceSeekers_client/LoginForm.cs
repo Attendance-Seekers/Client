@@ -23,19 +23,7 @@ namespace AttendanceSeekers_client
 
         }
 
-        //private void userTextBox_Click(object sender, EventArgs e)
-        //{
-        //    userTextBox.Clear();
-        //    userTextBox.ForeColor = Color.Black;
-        //}
-
-        //private void passTextBox_Click(object sender, EventArgs e)
-        //{
-        //    passTextBox.Clear();
-        //    passTextBox.ForeColor = Color.Black;
-
-        //}
-
+       
         private void Login_button_Click(object sender, EventArgs e)
         {
             var username = userTextBox.Text;

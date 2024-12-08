@@ -58,7 +58,7 @@
             // 
             // Login_button
             // 
-            Login_button.BackColor = Color.MidnightBlue;
+            Login_button.BackColor = Color.Navy;
             Login_button.Font = new Font("Showcard Gothic", 24F, FontStyle.Bold);
             Login_button.ForeColor = Color.Transparent;
             Login_button.Location = new Point(477, 510);
@@ -73,7 +73,8 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Showcard Gothic", 36F, FontStyle.Bold);
-            label3.Location = new Point(543, 55);
+            label3.ForeColor = Color.DodgerBlue;
+            label3.Location = new Point(567, 60);
             label3.Name = "label3";
             label3.Size = new Size(222, 74);
             label3.TabIndex = 6;
