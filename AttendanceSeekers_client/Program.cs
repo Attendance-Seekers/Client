@@ -1,3 +1,5 @@
+using AttendanceSeekers_client;
+
 namespace AttendanceSeekers_client
 {
     internal static class Program
@@ -11,7 +13,7 @@ namespace AttendanceSeekers_client
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new welcomeForm());
+            Application.Run(new MainForm());
         }
     }
 }
