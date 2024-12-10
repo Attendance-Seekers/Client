@@ -87,18 +87,19 @@
             dataGridViewCellStyle3.SelectionForeColor = Color.Black;
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dgvClass.DefaultCellStyle = dataGridViewCellStyle3;
-            dgvClass.Dock = DockStyle.Fill;
             dgvClass.EnableHeadersVisualStyles = false;
             dgvClass.GridColor = Color.FromArgb(221, 238, 255);
             dgvClass.HeaderBackColor = Color.DodgerBlue;
             dgvClass.HeaderBgColor = Color.Empty;
             dgvClass.HeaderForeColor = Color.White;
             dgvClass.Location = new Point(0, 0);
+            dgvClass.Margin = new Padding(3, 4, 3, 4);
             dgvClass.Name = "dgvClass";
             dgvClass.RowHeadersVisible = false;
+            dgvClass.RowHeadersWidth = 51;
             dgvClass.RowTemplate.Height = 40;
             dgvClass.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvClass.Size = new Size(800, 450);
+            dgvClass.Size = new Size(914, 600);
             dgvClass.TabIndex = 4;
             dgvClass.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             // 
@@ -107,25 +108,28 @@
             No.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             No.FillWeight = 52.63158F;
             No.HeaderText = "NoStudent";
+            No.MinimumWidth = 6;
             No.Name = "No";
-            No.Width = 113;
+            No.Width = 137;
             // 
             // Id
             // 
             Id.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             Id.DataPropertyName = "Class_Id";
             Id.HeaderText = "ID";
+            Id.MinimumWidth = 6;
             Id.Name = "Id";
             Id.Visible = false;
-            Id.Width = 49;
+            Id.Width = 125;
             // 
             // studentName
             // 
             studentName.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             studentName.DataPropertyName = "username";
             studentName.HeaderText = "Student_Name";
+            studentName.MinimumWidth = 6;
             studentName.Name = "studentName";
-            studentName.Width = 141;
+            studentName.Width = 172;
             // 
             // St_Satus
             // 
@@ -133,14 +137,16 @@
             St_Satus.DataPropertyName = "status";
             St_Satus.FillWeight = 147.368423F;
             St_Satus.HeaderText = "Status";
+            St_Satus.MinimumWidth = 6;
             St_Satus.Name = "St_Satus";
             // 
             // ShowStudent
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(914, 600);
             Controls.Add(dgvClass);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "ShowStudent";
             Text = "ShowStudent";
             ((System.ComponentModel.ISupportInitialize)dgvClass).EndInit();

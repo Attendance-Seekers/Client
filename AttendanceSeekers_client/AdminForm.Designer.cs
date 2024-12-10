@@ -37,19 +37,19 @@
             DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             StudentsPnel = new Bunifu.UI.WinForms.BunifuGradientPanel();
             bunifuImageButton1 = new Bunifu.UI.WinForms.BunifuImageButton();
-            lblValue = new Bunifu.UI.WinForms.BunifuLabel();
+            totalStudentLabel = new Bunifu.UI.WinForms.BunifuLabel();
             lblTitle = new Bunifu.UI.WinForms.BunifuLabel();
             TeachersPanel = new Bunifu.UI.WinForms.BunifuGradientPanel();
             bunifuImageButton2 = new Bunifu.UI.WinForms.BunifuImageButton();
-            lblCountTeacher = new Bunifu.UI.WinForms.BunifuLabel();
+            totalTeacherLabel = new Bunifu.UI.WinForms.BunifuLabel();
             lblTeacher = new Bunifu.UI.WinForms.BunifuLabel();
             bunifuGradientPanel3 = new Bunifu.UI.WinForms.BunifuGradientPanel();
             bunifuImageButton3 = new Bunifu.UI.WinForms.BunifuImageButton();
-            bunifuLabel3 = new Bunifu.UI.WinForms.BunifuLabel();
+            totalClassLabel = new Bunifu.UI.WinForms.BunifuLabel();
             lblClass = new Bunifu.UI.WinForms.BunifuLabel();
             bunifuGradientPanel1 = new Bunifu.UI.WinForms.BunifuGradientPanel();
             bunifuImageButton4 = new Bunifu.UI.WinForms.BunifuImageButton();
-            lblCountDept = new Bunifu.UI.WinForms.BunifuLabel();
+            totalDeptLabel = new Bunifu.UI.WinForms.BunifuLabel();
             lblDepartment = new Bunifu.UI.WinForms.BunifuLabel();
             bunifuGradientPanel2 = new Bunifu.UI.WinForms.BunifuGradientPanel();
             TopAbsentStudentView = new Bunifu.UI.WinForms.BunifuDataGridView();
@@ -80,16 +80,17 @@
             StudentsPnel.BackgroundImageLayout = ImageLayout.Stretch;
             StudentsPnel.BorderRadius = 5;
             StudentsPnel.Controls.Add(bunifuImageButton1);
-            StudentsPnel.Controls.Add(lblValue);
+            StudentsPnel.Controls.Add(totalStudentLabel);
             StudentsPnel.Controls.Add(lblTitle);
             StudentsPnel.GradientBottomLeft = Color.FromArgb(236, 92, 188);
             StudentsPnel.GradientBottomRight = Color.DeepPink;
             StudentsPnel.GradientTopLeft = Color.DodgerBlue;
             StudentsPnel.GradientTopRight = Color.FromArgb(198, 60, 212);
-            StudentsPnel.Location = new Point(20, 20);
+            StudentsPnel.Location = new Point(23, 27);
+            StudentsPnel.Margin = new Padding(3, 4, 3, 4);
             StudentsPnel.Name = "StudentsPnel";
             StudentsPnel.Quality = 10;
-            StudentsPnel.Size = new Size(383, 100);
+            StudentsPnel.Size = new Size(438, 133);
             StudentsPnel.TabIndex = 0;
             // 
             // bunifuImageButton1
@@ -109,38 +110,40 @@
             bunifuImageButton1.ImageActive = null;
             bunifuImageButton1.ImageLocation = null;
             bunifuImageButton1.ImageMargin = 20;
-            bunifuImageButton1.ImageSize = new Size(55, 35);
-            bunifuImageButton1.ImageZoomSize = new Size(75, 55);
+            bunifuImageButton1.ImageSize = new Size(66, 53);
+            bunifuImageButton1.ImageZoomSize = new Size(86, 73);
             bunifuImageButton1.InitialImage = (Image)resources.GetObject("bunifuImageButton1.InitialImage");
-            bunifuImageButton1.Location = new Point(18, 29);
+            bunifuImageButton1.Location = new Point(21, 39);
+            bunifuImageButton1.Margin = new Padding(3, 4, 3, 4);
             bunifuImageButton1.Name = "bunifuImageButton1";
             bunifuImageButton1.Rotation = 0;
             bunifuImageButton1.ShowActiveImage = true;
             bunifuImageButton1.ShowCursorChanges = true;
             bunifuImageButton1.ShowImageBorders = true;
             bunifuImageButton1.ShowSizeMarkers = false;
-            bunifuImageButton1.Size = new Size(75, 55);
+            bunifuImageButton1.Size = new Size(86, 73);
             bunifuImageButton1.TabIndex = 1;
             bunifuImageButton1.ToolTipText = "";
             bunifuImageButton1.WaitOnLoad = false;
             bunifuImageButton1.Zoom = 20;
             bunifuImageButton1.ZoomSpeed = 10;
             // 
-            // lblValue
+            // totalStudentLabel
             // 
-            lblValue.AllowParentOverrides = false;
-            lblValue.AutoEllipsis = false;
-            lblValue.CursorType = Cursors.Default;
-            lblValue.Font = new Font("Arial Narrow", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblValue.ForeColor = Color.White;
-            lblValue.Location = new Point(306, 38);
-            lblValue.Name = "lblValue";
-            lblValue.RightToLeft = RightToLeft.No;
-            lblValue.Size = new Size(33, 29);
-            lblValue.TabIndex = 2;
-            lblValue.Text = "128";
-            lblValue.TextAlignment = ContentAlignment.TopLeft;
-            lblValue.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            totalStudentLabel.AllowParentOverrides = false;
+            totalStudentLabel.AutoEllipsis = false;
+            totalStudentLabel.CursorType = Cursors.Default;
+            totalStudentLabel.Font = new Font("Arial Narrow", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            totalStudentLabel.ForeColor = Color.White;
+            totalStudentLabel.Location = new Point(350, 51);
+            totalStudentLabel.Margin = new Padding(3, 4, 3, 4);
+            totalStudentLabel.Name = "totalStudentLabel";
+            totalStudentLabel.RightToLeft = RightToLeft.No;
+            totalStudentLabel.Size = new Size(42, 35);
+            totalStudentLabel.TabIndex = 2;
+            totalStudentLabel.Text = "128";
+            totalStudentLabel.TextAlignment = ContentAlignment.TopLeft;
+            totalStudentLabel.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // lblTitle
             // 
@@ -149,10 +152,11 @@
             lblTitle.CursorType = Cursors.Default;
             lblTitle.Font = new Font("Arial Narrow", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTitle.ForeColor = Color.White;
-            lblTitle.Location = new Point(116, 10);
+            lblTitle.Location = new Point(133, 13);
+            lblTitle.Margin = new Padding(3, 4, 3, 4);
             lblTitle.Name = "lblTitle";
             lblTitle.RightToLeft = RightToLeft.No;
-            lblTitle.Size = new Size(124, 25);
+            lblTitle.Size = new Size(148, 31);
             lblTitle.TabIndex = 1;
             lblTitle.Text = "Total Students";
             lblTitle.TextAlignment = ContentAlignment.TopLeft;
@@ -165,16 +169,17 @@
             TeachersPanel.BackgroundImageLayout = ImageLayout.Stretch;
             TeachersPanel.BorderRadius = 5;
             TeachersPanel.Controls.Add(bunifuImageButton2);
-            TeachersPanel.Controls.Add(lblCountTeacher);
+            TeachersPanel.Controls.Add(totalTeacherLabel);
             TeachersPanel.Controls.Add(lblTeacher);
             TeachersPanel.GradientBottomLeft = Color.FromArgb(236, 92, 188);
             TeachersPanel.GradientBottomRight = Color.DeepPink;
             TeachersPanel.GradientTopLeft = Color.DodgerBlue;
             TeachersPanel.GradientTopRight = Color.FromArgb(198, 60, 212);
-            TeachersPanel.Location = new Point(20, 166);
+            TeachersPanel.Location = new Point(23, 221);
+            TeachersPanel.Margin = new Padding(3, 4, 3, 4);
             TeachersPanel.Name = "TeachersPanel";
             TeachersPanel.Quality = 10;
-            TeachersPanel.Size = new Size(383, 100);
+            TeachersPanel.Size = new Size(438, 133);
             TeachersPanel.TabIndex = 3;
             // 
             // bunifuImageButton2
@@ -194,38 +199,40 @@
             bunifuImageButton2.ImageActive = null;
             bunifuImageButton2.ImageLocation = null;
             bunifuImageButton2.ImageMargin = 20;
-            bunifuImageButton2.ImageSize = new Size(55, 35);
-            bunifuImageButton2.ImageZoomSize = new Size(75, 55);
+            bunifuImageButton2.ImageSize = new Size(66, 53);
+            bunifuImageButton2.ImageZoomSize = new Size(86, 73);
             bunifuImageButton2.InitialImage = (Image)resources.GetObject("bunifuImageButton2.InitialImage");
-            bunifuImageButton2.Location = new Point(18, 29);
+            bunifuImageButton2.Location = new Point(21, 39);
+            bunifuImageButton2.Margin = new Padding(3, 4, 3, 4);
             bunifuImageButton2.Name = "bunifuImageButton2";
             bunifuImageButton2.Rotation = 0;
             bunifuImageButton2.ShowActiveImage = true;
             bunifuImageButton2.ShowCursorChanges = true;
             bunifuImageButton2.ShowImageBorders = true;
             bunifuImageButton2.ShowSizeMarkers = false;
-            bunifuImageButton2.Size = new Size(75, 55);
+            bunifuImageButton2.Size = new Size(86, 73);
             bunifuImageButton2.TabIndex = 1;
             bunifuImageButton2.ToolTipText = "";
             bunifuImageButton2.WaitOnLoad = false;
             bunifuImageButton2.Zoom = 20;
             bunifuImageButton2.ZoomSpeed = 10;
             // 
-            // lblCountTeacher
+            // totalTeacherLabel
             // 
-            lblCountTeacher.AllowParentOverrides = false;
-            lblCountTeacher.AutoEllipsis = false;
-            lblCountTeacher.CursorType = Cursors.Default;
-            lblCountTeacher.Font = new Font("Arial Narrow", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblCountTeacher.ForeColor = Color.White;
-            lblCountTeacher.Location = new Point(306, 41);
-            lblCountTeacher.Name = "lblCountTeacher";
-            lblCountTeacher.RightToLeft = RightToLeft.No;
-            lblCountTeacher.Size = new Size(33, 29);
-            lblCountTeacher.TabIndex = 2;
-            lblCountTeacher.Text = "128";
-            lblCountTeacher.TextAlignment = ContentAlignment.TopLeft;
-            lblCountTeacher.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            totalTeacherLabel.AllowParentOverrides = false;
+            totalTeacherLabel.AutoEllipsis = false;
+            totalTeacherLabel.CursorType = Cursors.Default;
+            totalTeacherLabel.Font = new Font("Arial Narrow", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            totalTeacherLabel.ForeColor = Color.White;
+            totalTeacherLabel.Location = new Point(350, 55);
+            totalTeacherLabel.Margin = new Padding(3, 4, 3, 4);
+            totalTeacherLabel.Name = "totalTeacherLabel";
+            totalTeacherLabel.RightToLeft = RightToLeft.No;
+            totalTeacherLabel.Size = new Size(42, 35);
+            totalTeacherLabel.TabIndex = 2;
+            totalTeacherLabel.Text = "128";
+            totalTeacherLabel.TextAlignment = ContentAlignment.TopLeft;
+            totalTeacherLabel.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // lblTeacher
             // 
@@ -234,10 +241,11 @@
             lblTeacher.CursorType = Cursors.Default;
             lblTeacher.Font = new Font("Arial Narrow", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTeacher.ForeColor = Color.White;
-            lblTeacher.Location = new Point(96, 3);
+            lblTeacher.Location = new Point(110, 4);
+            lblTeacher.Margin = new Padding(3, 4, 3, 4);
             lblTeacher.Name = "lblTeacher";
             lblTeacher.RightToLeft = RightToLeft.No;
-            lblTeacher.Size = new Size(127, 25);
+            lblTeacher.Size = new Size(151, 31);
             lblTeacher.TabIndex = 1;
             lblTeacher.Text = "Total Teachers";
             lblTeacher.TextAlignment = ContentAlignment.TopLeft;
@@ -250,16 +258,17 @@
             bunifuGradientPanel3.BackgroundImageLayout = ImageLayout.Stretch;
             bunifuGradientPanel3.BorderRadius = 5;
             bunifuGradientPanel3.Controls.Add(bunifuImageButton3);
-            bunifuGradientPanel3.Controls.Add(bunifuLabel3);
+            bunifuGradientPanel3.Controls.Add(totalClassLabel);
             bunifuGradientPanel3.Controls.Add(lblClass);
             bunifuGradientPanel3.GradientBottomLeft = Color.FromArgb(236, 92, 188);
             bunifuGradientPanel3.GradientBottomRight = Color.DeepPink;
             bunifuGradientPanel3.GradientTopLeft = Color.DodgerBlue;
             bunifuGradientPanel3.GradientTopRight = Color.FromArgb(198, 60, 212);
-            bunifuGradientPanel3.Location = new Point(560, 20);
+            bunifuGradientPanel3.Location = new Point(640, 27);
+            bunifuGradientPanel3.Margin = new Padding(3, 4, 3, 4);
             bunifuGradientPanel3.Name = "bunifuGradientPanel3";
             bunifuGradientPanel3.Quality = 10;
-            bunifuGradientPanel3.Size = new Size(368, 113);
+            bunifuGradientPanel3.Size = new Size(421, 151);
             bunifuGradientPanel3.TabIndex = 4;
             // 
             // bunifuImageButton3
@@ -279,39 +288,41 @@
             bunifuImageButton3.ImageActive = null;
             bunifuImageButton3.ImageLocation = null;
             bunifuImageButton3.ImageMargin = 20;
-            bunifuImageButton3.ImageSize = new Size(54, 42);
-            bunifuImageButton3.ImageZoomSize = new Size(74, 62);
+            bunifuImageButton3.ImageSize = new Size(65, 63);
+            bunifuImageButton3.ImageZoomSize = new Size(85, 83);
             bunifuImageButton3.InitialImage = Properties.Resources.Classroom;
-            bunifuImageButton3.Location = new Point(16, 38);
+            bunifuImageButton3.Location = new Point(18, 51);
+            bunifuImageButton3.Margin = new Padding(3, 4, 3, 4);
             bunifuImageButton3.Name = "bunifuImageButton3";
             bunifuImageButton3.Rotation = 0;
             bunifuImageButton3.ShowActiveImage = true;
             bunifuImageButton3.ShowCursorChanges = true;
             bunifuImageButton3.ShowImageBorders = true;
             bunifuImageButton3.ShowSizeMarkers = false;
-            bunifuImageButton3.Size = new Size(74, 62);
+            bunifuImageButton3.Size = new Size(85, 83);
             bunifuImageButton3.TabIndex = 1;
             bunifuImageButton3.ToolTipText = "";
             bunifuImageButton3.WaitOnLoad = false;
             bunifuImageButton3.Zoom = 20;
             bunifuImageButton3.ZoomSpeed = 10;
             // 
-            // bunifuLabel3
+            // totalClassLabel
             // 
-            bunifuLabel3.AllowParentOverrides = false;
-            bunifuLabel3.AutoEllipsis = false;
-            bunifuLabel3.CursorType = Cursors.Default;
-            bunifuLabel3.Font = new Font("Arial Narrow", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            bunifuLabel3.ForeColor = Color.White;
-            bunifuLabel3.Location = new Point(309, 51);
-            bunifuLabel3.Name = "bunifuLabel3";
-            bunifuLabel3.RightToLeft = RightToLeft.No;
-            bunifuLabel3.Size = new Size(33, 29);
-            bunifuLabel3.TabIndex = 2;
-            bunifuLabel3.Text = "128";
-            bunifuLabel3.TextAlignment = ContentAlignment.TopLeft;
-            bunifuLabel3.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            bunifuLabel3.Click += bunifuLabel3_Click;
+            totalClassLabel.AllowParentOverrides = false;
+            totalClassLabel.AutoEllipsis = false;
+            totalClassLabel.CursorType = Cursors.Default;
+            totalClassLabel.Font = new Font("Arial Narrow", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            totalClassLabel.ForeColor = Color.White;
+            totalClassLabel.Location = new Point(353, 68);
+            totalClassLabel.Margin = new Padding(3, 4, 3, 4);
+            totalClassLabel.Name = "totalClassLabel";
+            totalClassLabel.RightToLeft = RightToLeft.No;
+            totalClassLabel.Size = new Size(42, 35);
+            totalClassLabel.TabIndex = 2;
+            totalClassLabel.Text = "128";
+            totalClassLabel.TextAlignment = ContentAlignment.TopLeft;
+            totalClassLabel.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            totalClassLabel.Click += bunifuLabel3_Click;
             // 
             // lblClass
             // 
@@ -320,10 +331,11 @@
             lblClass.CursorType = Cursors.Default;
             lblClass.Font = new Font("Arial Narrow", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblClass.ForeColor = Color.White;
-            lblClass.Location = new Point(129, 10);
+            lblClass.Location = new Point(147, 13);
+            lblClass.Margin = new Padding(3, 4, 3, 4);
             lblClass.Name = "lblClass";
             lblClass.RightToLeft = RightToLeft.No;
-            lblClass.Size = new Size(115, 25);
+            lblClass.Size = new Size(138, 31);
             lblClass.TabIndex = 1;
             lblClass.Text = "Total Classes";
             lblClass.TextAlignment = ContentAlignment.TopLeft;
@@ -336,16 +348,17 @@
             bunifuGradientPanel1.BackgroundImageLayout = ImageLayout.Stretch;
             bunifuGradientPanel1.BorderRadius = 5;
             bunifuGradientPanel1.Controls.Add(bunifuImageButton4);
-            bunifuGradientPanel1.Controls.Add(lblCountDept);
+            bunifuGradientPanel1.Controls.Add(totalDeptLabel);
             bunifuGradientPanel1.Controls.Add(lblDepartment);
             bunifuGradientPanel1.GradientBottomLeft = Color.FromArgb(236, 92, 188);
             bunifuGradientPanel1.GradientBottomRight = Color.DeepPink;
             bunifuGradientPanel1.GradientTopLeft = Color.DodgerBlue;
             bunifuGradientPanel1.GradientTopRight = Color.FromArgb(198, 60, 212);
-            bunifuGradientPanel1.Location = new Point(560, 166);
+            bunifuGradientPanel1.Location = new Point(640, 221);
+            bunifuGradientPanel1.Margin = new Padding(3, 4, 3, 4);
             bunifuGradientPanel1.Name = "bunifuGradientPanel1";
             bunifuGradientPanel1.Quality = 10;
-            bunifuGradientPanel1.Size = new Size(368, 100);
+            bunifuGradientPanel1.Size = new Size(421, 133);
             bunifuGradientPanel1.TabIndex = 5;
             // 
             // bunifuImageButton4
@@ -365,38 +378,40 @@
             bunifuImageButton4.ImageActive = null;
             bunifuImageButton4.ImageLocation = null;
             bunifuImageButton4.ImageMargin = 20;
-            bunifuImageButton4.ImageSize = new Size(52, 35);
-            bunifuImageButton4.ImageZoomSize = new Size(72, 55);
+            bunifuImageButton4.ImageSize = new Size(62, 53);
+            bunifuImageButton4.ImageZoomSize = new Size(82, 73);
             bunifuImageButton4.InitialImage = (Image)resources.GetObject("bunifuImageButton4.InitialImage");
-            bunifuImageButton4.Location = new Point(18, 29);
+            bunifuImageButton4.Location = new Point(21, 39);
+            bunifuImageButton4.Margin = new Padding(3, 4, 3, 4);
             bunifuImageButton4.Name = "bunifuImageButton4";
             bunifuImageButton4.Rotation = 0;
             bunifuImageButton4.ShowActiveImage = true;
             bunifuImageButton4.ShowCursorChanges = true;
             bunifuImageButton4.ShowImageBorders = true;
             bunifuImageButton4.ShowSizeMarkers = false;
-            bunifuImageButton4.Size = new Size(72, 55);
+            bunifuImageButton4.Size = new Size(82, 73);
             bunifuImageButton4.TabIndex = 1;
             bunifuImageButton4.ToolTipText = "";
             bunifuImageButton4.WaitOnLoad = false;
             bunifuImageButton4.Zoom = 20;
             bunifuImageButton4.ZoomSpeed = 10;
             // 
-            // lblCountDept
+            // totalDeptLabel
             // 
-            lblCountDept.AllowParentOverrides = false;
-            lblCountDept.AutoEllipsis = false;
-            lblCountDept.CursorType = Cursors.Default;
-            lblCountDept.Font = new Font("Arial Narrow", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblCountDept.ForeColor = Color.White;
-            lblCountDept.Location = new Point(309, 41);
-            lblCountDept.Name = "lblCountDept";
-            lblCountDept.RightToLeft = RightToLeft.No;
-            lblCountDept.Size = new Size(33, 29);
-            lblCountDept.TabIndex = 2;
-            lblCountDept.Text = "128";
-            lblCountDept.TextAlignment = ContentAlignment.TopLeft;
-            lblCountDept.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            totalDeptLabel.AllowParentOverrides = false;
+            totalDeptLabel.AutoEllipsis = false;
+            totalDeptLabel.CursorType = Cursors.Default;
+            totalDeptLabel.Font = new Font("Arial Narrow", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            totalDeptLabel.ForeColor = Color.White;
+            totalDeptLabel.Location = new Point(353, 55);
+            totalDeptLabel.Margin = new Padding(3, 4, 3, 4);
+            totalDeptLabel.Name = "totalDeptLabel";
+            totalDeptLabel.RightToLeft = RightToLeft.No;
+            totalDeptLabel.Size = new Size(42, 35);
+            totalDeptLabel.TabIndex = 2;
+            totalDeptLabel.Text = "128";
+            totalDeptLabel.TextAlignment = ContentAlignment.TopLeft;
+            totalDeptLabel.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // lblDepartment
             // 
@@ -405,10 +420,11 @@
             lblDepartment.CursorType = Cursors.Default;
             lblDepartment.Font = new Font("Arial Narrow", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblDepartment.ForeColor = Color.White;
-            lblDepartment.Location = new Point(114, 3);
+            lblDepartment.Location = new Point(130, 4);
+            lblDepartment.Margin = new Padding(3, 4, 3, 4);
             lblDepartment.Name = "lblDepartment";
             lblDepartment.RightToLeft = RightToLeft.No;
-            lblDepartment.Size = new Size(156, 25);
+            lblDepartment.Size = new Size(187, 31);
             lblDepartment.TabIndex = 1;
             lblDepartment.Text = "Total Departments";
             lblDepartment.TextAlignment = ContentAlignment.TopLeft;
@@ -426,10 +442,11 @@
             bunifuGradientPanel2.GradientBottomRight = Color.DeepPink;
             bunifuGradientPanel2.GradientTopLeft = Color.DodgerBlue;
             bunifuGradientPanel2.GradientTopRight = Color.FromArgb(198, 60, 212);
-            bunifuGradientPanel2.Location = new Point(20, 290);
+            bunifuGradientPanel2.Location = new Point(23, 387);
+            bunifuGradientPanel2.Margin = new Padding(3, 4, 3, 4);
             bunifuGradientPanel2.Name = "bunifuGradientPanel2";
             bunifuGradientPanel2.Quality = 10;
-            bunifuGradientPanel2.Size = new Size(383, 349);
+            bunifuGradientPanel2.Size = new Size(438, 465);
             bunifuGradientPanel2.TabIndex = 6;
             // 
             // TopAbsentStudentView
@@ -485,12 +502,14 @@
             TopAbsentStudentView.HeaderBackColor = Color.DodgerBlue;
             TopAbsentStudentView.HeaderBgColor = Color.Empty;
             TopAbsentStudentView.HeaderForeColor = Color.White;
-            TopAbsentStudentView.Location = new Point(0, 41);
+            TopAbsentStudentView.Location = new Point(0, 54);
+            TopAbsentStudentView.Margin = new Padding(3, 4, 3, 4);
             TopAbsentStudentView.Name = "TopAbsentStudentView";
             TopAbsentStudentView.RowHeadersVisible = false;
+            TopAbsentStudentView.RowHeadersWidth = 51;
             TopAbsentStudentView.RowTemplate.Height = 40;
             TopAbsentStudentView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            TopAbsentStudentView.Size = new Size(383, 308);
+            TopAbsentStudentView.Size = new Size(438, 411);
             TopAbsentStudentView.TabIndex = 4;
             TopAbsentStudentView.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             // 
@@ -498,6 +517,7 @@
             // 
             IdColumn.DataPropertyName = "id";
             IdColumn.HeaderText = "ID";
+            IdColumn.MinimumWidth = 6;
             IdColumn.Name = "IdColumn";
             IdColumn.Visible = false;
             // 
@@ -505,12 +525,14 @@
             // 
             UserNameColumn.DataPropertyName = "username";
             UserNameColumn.HeaderText = "UserName";
+            UserNameColumn.MinimumWidth = 6;
             UserNameColumn.Name = "UserNameColumn";
             // 
             // StatusColumn
             // 
             StatusColumn.DataPropertyName = "status";
             StatusColumn.HeaderText = "Status";
+            StatusColumn.MinimumWidth = 6;
             StatusColumn.Name = "StatusColumn";
             // 
             // lblStudentAbsent
@@ -520,10 +542,11 @@
             lblStudentAbsent.CursorType = Cursors.Default;
             lblStudentAbsent.Font = new Font("Arial Narrow", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblStudentAbsent.ForeColor = Color.White;
-            lblStudentAbsent.Location = new Point(96, 10);
+            lblStudentAbsent.Location = new Point(110, 13);
+            lblStudentAbsent.Margin = new Padding(3, 4, 3, 4);
             lblStudentAbsent.Name = "lblStudentAbsent";
             lblStudentAbsent.RightToLeft = RightToLeft.No;
-            lblStudentAbsent.Size = new Size(194, 25);
+            lblStudentAbsent.Size = new Size(232, 31);
             lblStudentAbsent.TabIndex = 3;
             lblStudentAbsent.Text = "Top 5 Absent Students";
             lblStudentAbsent.TextAlignment = ContentAlignment.TopLeft;
@@ -542,10 +565,11 @@
             bunifuGradientPanel4.GradientBottomRight = Color.DeepPink;
             bunifuGradientPanel4.GradientTopLeft = Color.DodgerBlue;
             bunifuGradientPanel4.GradientTopRight = Color.FromArgb(198, 60, 212);
-            bunifuGradientPanel4.Location = new Point(560, 290);
+            bunifuGradientPanel4.Location = new Point(640, 387);
+            bunifuGradientPanel4.Margin = new Padding(3, 4, 3, 4);
             bunifuGradientPanel4.Name = "bunifuGradientPanel4";
             bunifuGradientPanel4.Quality = 10;
-            bunifuGradientPanel4.Size = new Size(368, 349);
+            bunifuGradientPanel4.Size = new Size(421, 465);
             bunifuGradientPanel4.TabIndex = 7;
             // 
             // bunifuDataGridView2
@@ -600,29 +624,34 @@
             bunifuDataGridView2.HeaderBackColor = Color.DodgerBlue;
             bunifuDataGridView2.HeaderBgColor = Color.Empty;
             bunifuDataGridView2.HeaderForeColor = Color.White;
-            bunifuDataGridView2.Location = new Point(0, 41);
+            bunifuDataGridView2.Location = new Point(0, 54);
+            bunifuDataGridView2.Margin = new Padding(3, 4, 3, 4);
             bunifuDataGridView2.Name = "bunifuDataGridView2";
             bunifuDataGridView2.RowHeadersVisible = false;
+            bunifuDataGridView2.RowHeadersWidth = 51;
             bunifuDataGridView2.RowTemplate.Height = 40;
             bunifuDataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            bunifuDataGridView2.Size = new Size(368, 308);
+            bunifuDataGridView2.Size = new Size(421, 411);
             bunifuDataGridView2.TabIndex = 4;
             bunifuDataGridView2.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             // 
             // dataGridViewTextBoxColumn1
             // 
             dataGridViewTextBoxColumn1.HeaderText = "ID";
+            dataGridViewTextBoxColumn1.MinimumWidth = 6;
             dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             dataGridViewTextBoxColumn1.Visible = false;
             // 
             // dataGridViewTextBoxColumn2
             // 
             dataGridViewTextBoxColumn2.HeaderText = "UserName";
+            dataGridViewTextBoxColumn2.MinimumWidth = 6;
             dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
             // dataGridViewTextBoxColumn3
             // 
             dataGridViewTextBoxColumn3.HeaderText = "Status";
+            dataGridViewTextBoxColumn3.MinimumWidth = 6;
             dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
             // bunifuLabel1
@@ -632,10 +661,11 @@
             bunifuLabel1.CursorType = Cursors.Default;
             bunifuLabel1.Font = new Font("Arial Narrow", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             bunifuLabel1.ForeColor = Color.White;
-            bunifuLabel1.Location = new Point(53, 10);
+            bunifuLabel1.Location = new Point(61, 13);
+            bunifuLabel1.Margin = new Padding(3, 4, 3, 4);
             bunifuLabel1.Name = "bunifuLabel1";
             bunifuLabel1.RightToLeft = RightToLeft.No;
-            bunifuLabel1.Size = new Size(299, 25);
+            bunifuLabel1.Size = new Size(358, 31);
             bunifuLabel1.TabIndex = 3;
             bunifuLabel1.Text = "Top 5 Attendees for Partial Classes";
             bunifuLabel1.TextAlignment = ContentAlignment.TopLeft;
@@ -643,10 +673,10 @@
             // 
             // AdminForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoValidate = AutoValidate.EnableAllowFocusChange;
-            ClientSize = new Size(951, 661);
+            ClientSize = new Size(1087, 881);
             ControlBox = false;
             Controls.Add(bunifuGradientPanel4);
             Controls.Add(bunifuGradientPanel2);
@@ -655,6 +685,8 @@
             Controls.Add(TeachersPanel);
             Controls.Add(StudentsPnel);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            HelpButton = true;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "AdminForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Education DashBoard";
@@ -679,19 +711,19 @@
 
         private Bunifu.UI.WinForms.BunifuGradientPanel StudentsPnel;
         private Bunifu.UI.WinForms.BunifuLabel lblTitle;
-        private Bunifu.UI.WinForms.BunifuLabel lblValue;
+        private Bunifu.UI.WinForms.BunifuLabel totalStudentLabel;
         private Bunifu.UI.WinForms.BunifuImageButton bunifuImageButton1;
         private Bunifu.UI.WinForms.BunifuGradientPanel TeachersPanel;
         private Bunifu.UI.WinForms.BunifuImageButton bunifuImageButton2;
-        private Bunifu.UI.WinForms.BunifuLabel lblCountTeacher;
+        private Bunifu.UI.WinForms.BunifuLabel totalTeacherLabel;
         private Bunifu.UI.WinForms.BunifuLabel lblTeacher;
         private Bunifu.UI.WinForms.BunifuGradientPanel bunifuGradientPanel3;
         private Bunifu.UI.WinForms.BunifuImageButton bunifuImageButton3;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel3;
+        private Bunifu.UI.WinForms.BunifuLabel totalClassLabel;
         private Bunifu.UI.WinForms.BunifuLabel lblClass;
         private Bunifu.UI.WinForms.BunifuGradientPanel bunifuGradientPanel1;
         private Bunifu.UI.WinForms.BunifuImageButton bunifuImageButton4;
-        private Bunifu.UI.WinForms.BunifuLabel lblCountDept;
+        private Bunifu.UI.WinForms.BunifuLabel totalDeptLabel;
         private Bunifu.UI.WinForms.BunifuLabel lblDepartment;
         private Bunifu.UI.WinForms.BunifuGradientPanel bunifuGradientPanel2;
         private Bunifu.UI.WinForms.BunifuLabel lblStudentAbsent;
