@@ -89,7 +89,7 @@
             labelName.ForeColor = SystemColors.Control;
             labelName.Location = new Point(12, 12);
             labelName.Name = "labelName";
-            labelName.Size = new Size(111, 19);
+            labelName.Size = new Size(142, 23);
             labelName.TabIndex = 0;
             labelName.Text = "Class Module";
             // 
@@ -100,7 +100,7 @@
             lblId.BorderStyle = BorderStyle.FixedSingle;
             lblId.Location = new Point(46, 139);
             lblId.Name = "lblId";
-            lblId.Size = new Size(24, 22);
+            lblId.Size = new Size(28, 24);
             lblId.TabIndex = 13;
             lblId.Text = "id";
             lblId.Visible = false;
@@ -133,14 +133,14 @@
             btnUpdate.TabIndex = 11;
             btnUpdate.Text = "Update";
             btnUpdate.UseVisualStyleBackColor = false;
-            btnUpdate.Click += btnUpdate_ClickAsync;
+            btnUpdate.Click += btnUpdate_Click_1;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Location = new Point(46, 90);
             label2.Name = "label2";
-            label2.Size = new Size(98, 20);
+            label2.Size = new Size(121, 22);
             label2.TabIndex = 10;
             label2.Text = "Class Name:";
             // 
@@ -157,12 +157,13 @@
             btnSave.TabIndex = 9;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = false;
+            btnSave.Click += btnSave_Click;
             // 
             // textClassName
             // 
             textClassName.Location = new Point(179, 87);
             textClassName.Name = "textClassName";
-            textClassName.Size = new Size(195, 26);
+            textClassName.Size = new Size(195, 30);
             textClassName.TabIndex = 8;
             // 
             // Class_Size
@@ -171,7 +172,7 @@
             Class_Size.Location = new Point(474, 90);
             Class_Size.Name = "Class_Size";
             Class_Size.RightToLeft = RightToLeft.No;
-            Class_Size.Size = new Size(39, 20);
+            Class_Size.Size = new Size(47, 22);
             Class_Size.TabIndex = 14;
             Class_Size.Text = "Size:";
             // 
@@ -179,10 +180,10 @@
             // 
             Size.ImeMode = ImeMode.NoControl;
             Size.Location = new Point(519, 90);
-            Size.Maximum = new decimal(new int[] { 30, 0, 0, 0 });
+            Size.Maximum = new decimal(new int[] { 9999, 0, 0, 0 });
             Size.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             Size.Name = "Size";
-            Size.Size = new Size(168, 26);
+            Size.Size = new Size(168, 30);
             Size.TabIndex = 26;
             Size.TextAlign = HorizontalAlignment.Center;
             Size.Value = new decimal(new int[] { 1, 0, 0, 0 });
@@ -191,17 +192,17 @@
             // 
             Class_id.ImeMode = ImeMode.NoControl;
             Class_id.Location = new Point(83, 137);
-            Class_id.Maximum = new decimal(new int[] { 30, 0, 0, 0 });
+            Class_id.Maximum = new decimal(new int[] { 99999, 0, 0, 0 });
             Class_id.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             Class_id.Name = "Class_id";
-            Class_id.Size = new Size(61, 26);
+            Class_id.Size = new Size(61, 30);
             Class_id.TabIndex = 28;
             Class_id.TextAlign = HorizontalAlignment.Center;
             Class_id.Value = new decimal(new int[] { 1, 0, 0, 0 });
-            //
+            // 
             // ClassModule
             // 
-            AutoScaleDimensions = new SizeF(9F, 20F);
+            AutoScaleDimensions = new SizeF(11F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(755, 188);
             ControlBox = false;

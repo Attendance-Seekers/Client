@@ -149,37 +149,4 @@
         VzEdElUbFMPNZ0MUxS9ax+HZmmw9PgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="bunifuLabel1.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI'; font-size: 16.2pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: left; }</value>
-  </data>
-  <data name="bunifuLabel2.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI'; font-size: 16.2pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: left; }</value>
-  </data>
-  <data name="classSizetextbox.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAMoAAAAlCAYAAAADd3b/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAACgSURBVHhe7dOxCQMxAARB9V/VPyrDZbgAPwIlwthsATNw
-        yeU7gGjO+bqu62Nm51YbO5Mx1gF8W23sTIQCvwgFAqFAIBQIhAKBUCAQCgRCgUAoEAgFAqFAIBQIhAKB
-        UCAQCgRCgUAoEAgFAqFAIBQIhAKBUCAQCgRCgUAoEAgFAqFAIBQIhAKBUCAQCgRCgeAI5b7v9zrM7Nxq
-        Y2cC/DfGA4M+oJTM+fjBAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="classNametextbox.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAMoAAAArCAYAAAA5fRePAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAACwSURBVHhe7dOxCQMxAARB9V/VPyrDZbgAPwIlwthsATNw
-        yeU7gGjO+bqu62Nm51YbO5Mx1gF8W23sTIQCvwgFAqFAIBQIhAKBUCAQCgRCgUAoEAgFAqFAIBQIhAKB
-        UCAQCgRCgUAoEAgFAqFAIBQIhAKBUCAQCgRCgUAoEAgFAqFAIBQIhAKBUCAQCgRCgUAoEAgFAqFAIBQI
-        hAKBUCA4Qrnv+70OMzu32tiZAP+N8QBjGUYV+XrenAAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="addclassbtn.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAMEAAAAyCAYAAADlRL8rAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAACxSURBVHhe7dMxAYAwAMAwlMzy8IeM/RsIwEFz5Orda9z7
-        Gfc50LSfb4K/AB0mIM8E5JmAPBOQZwLyTECeCcgzAXkmIM8E5JmAPBOQZwLyTECeCcgzAXkmIM8E5JmA
-        PBOQZwLyTECeCcgzAXkmIM8E5JmAPBOQZwLyTECeCcgzAXkmIM8E5JmAPBOQZwLyTECeCcgzAXkmIM8E
-        5JmAPBOQZwLyTECeCci7xtzrL0DC3OsFGGC9DyyLD3IAAAAASUVORK5CYII=
-</value>
-  </data>
 </root>

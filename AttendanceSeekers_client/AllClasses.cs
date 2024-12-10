@@ -27,7 +27,10 @@ namespace AttendanceSeekers_client
 
         public AllClasses()
         {
+
             InitializeComponent();
+            dgvClass.Visible = true;
+
             LoadClassesAsync();
 
             //_httpClient = new HttpClient();
@@ -39,13 +42,6 @@ namespace AttendanceSeekers_client
             //TopAbsentStudentView.AutoGenerateColumns = false;
             dgvClass.DataSource = Classes;
             dgvClass.Visible = true;
-            classNametextbox.Visible = false;
-            classSizetextbox.Visible = false;
-            addclassbtn.Visible = false;
-            bunifuLabel1.Visible = false;
-            bunifuLabel2.Visible = false;
-            bunifuShapes1.Dock = DockStyle.None;
-
 
 
 
@@ -59,6 +55,22 @@ namespace AttendanceSeekers_client
             {
                 string json = await response.Content.ReadAsStringAsync();
                 return JsonConvert.DeserializeObject<List<SelectClassDTO>>(json);
+            }
+            else
+            {
+                throw new Exception($"Failed to fetch data: {response.StatusCode}");
+            }
+
+        }
+        private async Task<SelectClassDTO> FetchDataFromAPIUsingId(int id)
+        {
+
+            string ApiURL = $"api/classes/{id}";
+            HttpResponseMessage response = await _httpClient.GetAsync(ApiURL);
+            if (response.StatusCode == HttpStatusCode.OK)
+            {
+                string json = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<SelectClassDTO>(json);
             }
             else
             {
@@ -113,53 +125,60 @@ namespace AttendanceSeekers_client
 
 
 
-        
+
         private async void btnAdd_Click(object sender, EventArgs e)
         {
-            dgvClass.Visible = false;
-            bunifuShapes1.Dock = DockStyle.Top;
-           
-            classNametextbox.Visible = true;
-            classSizetextbox.Visible = true;
-            addclassbtn.Visible = true;
-            bunifuLabel1.Visible = true;
-            bunifuLabel2.Visible = true;
+            ClassModule classModule = new ClassModule();
+            classModule.ShowDialog();
+            LoadClassesAsync();
+
         }
 
-
-
-        private async void addclassbtn_Click(object sender, EventArgs e)
+        private async void dgvClass_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            var className = classNametextbox.Text;
-            if (!int.TryParse(classSizetextbox.Text, out int classSize))
+            if (e.RowIndex >= 0) // Ensure a valid row is selected
             {
-                MessageBox.Show("Class size must be a valid number.");
-                return;
-            }
-            
-            
-
-            // Create the DTO object
-            AddClassDTO addClassDTO = new AddClassDTO() { Class_Name = className, Class_Size = classSize ,studentsIDs = [] };
-
-            
-            try
-            {
-                var status = await PostDataFromAPI(addClassDTO);
-
-                if (status == HttpStatusCode.Created)
+                try
                 {
-                    MessageBox.Show($"Class added successfully: {className}, Size: {classSize}");
+                    // Get the ID from the corresponding cell
+                    int id = Convert.ToInt32(dgvClass.Rows[e.RowIndex].Cells["Id"].Value);
+
+                    // Fetch the class data using the ID
+                    var classDTO = await FetchDataFromAPIUsingId(id);
+
+                    // Pass the fetched data to the ClassModule form
+                    ClassModule classModule = new ClassModule(classDTO.Class_Id, classDTO.Class_Name, classDTO.Class_Size);
+                    classModule.ShowDialog(); // Open the form as a modal dialog
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"An error occurred: {ex.Message}");
+                }
+            }
+
+        }
+
+        private async void dgvClass_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex >= 0) // Ensure a valid row is selected
+            {
+                try
+                {
+                    // Get the ID from the corresponding cell
+                    int id = Convert.ToInt32(dgvClass.Rows[e.RowIndex].Cells["Id"].Value);
+
+                    // Fetch the class data using the ID
+                    var classDTO = await FetchDataFromAPIUsingId(id);
+
+                    // Pass the fetched data to the ClassModule form
+                    ClassModule classModule = new ClassModule(classDTO.Class_Id, classDTO.Class_Name, classDTO.Class_Size);
+                    classModule.ShowDialog(); // Open the form as a modal dialog
                     LoadClassesAsync();
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show($"Failed to add class. Status: {status}");
+                    MessageBox.Show($"An error occurred: {ex.Message}");
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"An error occurred: {ex.Message}");
             }
         }
     }

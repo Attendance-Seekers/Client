@@ -10,10 +10,15 @@ namespace AttendanceSeekers_client.Services
 {
     public class Requests
     {
-        HttpClient _http;
-        public Requests(HttpClient http)
+        HttpClient _http= GlobalConfig.Instance.HttpClient;
+
+        //public Requests(HttpClient http)
+        //{
+        //    _http = http;
+        //}
+        public Requests()
         {
-            _http = http;
+            
         }
         public async Task<HttpResponseMessage> SendRequestAsync<T>(string url, HttpMethod method, T data)
         {
