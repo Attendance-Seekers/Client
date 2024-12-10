@@ -19,10 +19,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="AllDepartments.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="AllSubjects.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="AllTeachers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="DepartmentModule.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="SubjectModule.cs">
@@ -39,6 +45,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="DepartmentModule.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Update="SubjectModule.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>

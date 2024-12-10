@@ -168,7 +168,7 @@
             Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Margin = new Padding(4);
             Name = "AllTeachers";
-            Text = "AllClasses";
+            Text = "AllTeachers";
             ((System.ComponentModel.ISupportInitialize)dgvClass).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
