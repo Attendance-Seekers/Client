@@ -17,6 +17,7 @@ using Attendance_Student.DTOs.Account_DTOs;
 using static AttendanceSeekers_client.LoginForm;
 using Microsoft.AspNetCore.Mvc;
 using Attendance_Student.DTOs.TeacherDTO;
+using static System.Net.WebRequestMethods;
 
 namespace AttendanceSeekers_client
 {
@@ -53,6 +54,12 @@ namespace AttendanceSeekers_client
         {
 
             string ApiURL = "api/Teacher";
+            if (!string.IsNullOrWhiteSpace(GlobalConfig.Instance.Token))
+            {
+                _httpClient.DefaultRequestHeaders.Authorization =
+                    new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", GlobalConfig.Instance.Token);
+            }
+
             HttpResponseMessage response = await _httpClient.GetAsync(ApiURL);
             if (response.StatusCode == HttpStatusCode.OK)
             {
@@ -69,6 +76,11 @@ namespace AttendanceSeekers_client
         {
 
             string ApiURL = $"api/Teacher/{id}";
+            if (!string.IsNullOrWhiteSpace(GlobalConfig.Instance.Token))
+            {
+                _httpClient.DefaultRequestHeaders.Authorization =
+                    new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", GlobalConfig.Instance.Token);
+            }
             HttpResponseMessage response = await _httpClient.GetAsync(ApiURL);
             if (response.StatusCode == HttpStatusCode.OK)
             {

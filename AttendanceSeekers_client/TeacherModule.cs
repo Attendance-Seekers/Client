@@ -8,6 +8,7 @@ using System.Text;
 using System.Text.Json;
 using static System.Net.WebRequestMethods;
 using Attendance_Student.DTOs.TeacherDTO;
+using Attendance_Student.DTOs.SubjectDTO;
 
 namespace AttendanceSeekers_client
 {
@@ -21,14 +22,23 @@ namespace AttendanceSeekers_client
         {
             InitializeComponent();
             btnUpdate.Enabled = false;
-
+            btnSave.Enabled = true;
+            passlbl.Visible = true;
+            textPass.Visible = true;
+            textUsername.Visible = true;
+            usernamelbl.Visible = true;
         }
         public TeacherModule(SelectTeacherDTO TeacherDTO)
         {
             InitializeComponent();
 
-
+            passlbl.Visible = false;
+            textPass.Visible = false;
+            textUsername.Visible = false;
+            usernamelbl.Visible = false;
             btnUpdate.Enabled = true;
+            btnSave.Enabled = false;
+
             //_editTeacher = editTeacherDTO;
             textAddress.Text = TeacherDTO.address;
             textEmail.Text = TeacherDTO.email;
@@ -52,7 +62,8 @@ namespace AttendanceSeekers_client
             textTeacherName.Clear();
             age.Value = 1;
             subjId.Value = 1;
-
+            textUsername.Clear();
+            textPass.Clear();
             this.Dispose();
 
 
@@ -70,6 +81,50 @@ namespace AttendanceSeekers_client
         }
 
 
+        private async Task<HttpStatusCode> PostDataFromAPI(AddTeacherDTO addTeacherDTO)
+        {
+            try
+            {
+                string apiUrl = "api/Teacher";
+
+                string jsonData = JsonConvert.SerializeObject(addTeacherDTO);
+
+                var content = new StringContent(jsonData, Encoding.UTF8, "application/json");
+
+                // Add the Bearer token to the headers if available
+                if (!string.IsNullOrWhiteSpace(GlobalConfig.Instance.Token))
+                {
+                    _http.DefaultRequestHeaders.Authorization =
+                        new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", GlobalConfig.Instance.Token);
+                }
+
+                // Send the POST request asynchronously
+                HttpResponseMessage response = await _http.PostAsync(apiUrl, content);
+
+                // Check the response status
+                if (response.IsSuccessStatusCode)
+                {
+
+                    string responseBody = await response.Content.ReadAsStringAsync();
+                    MessageBox.Show($"Data posted successfully. {response.StatusCode}");
+
+                    return response.StatusCode;
+                }
+                else
+                {
+                    // Handle failed responses
+                    return response.StatusCode;
+                }
+            }
+            catch (Exception ex)
+            {
+                // Log the exception (optional)
+                MessageBox.Show($"An error occurred: {ex.Message}");
+
+                // Return a status code indicating an error (e.g., 500 Internal Server Error)
+                return HttpStatusCode.InternalServerError;
+            }
+        }
 
         private async Task<HttpStatusCode> UpdateDataFromAPI(EditTeacherDTO editTeacherDTO)
         {
@@ -136,12 +191,12 @@ namespace AttendanceSeekers_client
 
                 if (status == HttpStatusCode.OK)
                 {
-                    MessageBox.Show($"Class updated successfully: {_editTeacher.Teacher_fullName}");
+                    MessageBox.Show($"Teacher updated successfully: {_editTeacher.Teacher_fullName}");
                     Clear();
                 }
                 else
                 {
-                    MessageBox.Show($"Failed to update class. Status: {status}");
+                    MessageBox.Show($"Failed to update teacher. Status: {status}");
                 }
             }
             catch (Exception ex)
@@ -151,8 +206,39 @@ namespace AttendanceSeekers_client
 
         }
 
-        private void label3_Click(object sender, EventArgs e)
+       
+        private async void btnSave_Click(object sender, EventArgs e)
         {
+            var _addTeacher = new AddTeacherDTO()
+            {
+                address = textAddress.Text,
+                email = textEmail.Text,
+                phonenumber = textPhone.Text,
+                Teacher_fullName = textTeacherName.Text,
+                age = (int)age.Value,
+                SubjectId = (int)subjId.Value,
+                username = textUsername.Text,
+                password = textPass.Text
+            };
+
+            try
+            {
+                var status = await PostDataFromAPI(_addTeacher);
+
+                if (status == HttpStatusCode.OK)
+                {
+                    MessageBox.Show($"Teacher updated successfully: {_addTeacher.Teacher_fullName}");
+                    Clear();
+                }
+                else
+                {
+                    MessageBox.Show($"Failed to update teacher. Status: {status}");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}");
+            }
 
         }
     }

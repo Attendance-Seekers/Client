@@ -46,6 +46,11 @@
             label5 = new Label();
             textPhone = new TextBox();
             label6 = new Label();
+            passlbl = new Label();
+            textPass = new TextBox();
+            usernamelbl = new Label();
+            textUsername = new TextBox();
+            btnSave = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picClose).BeginInit();
@@ -70,7 +75,7 @@
             // labelName
             // 
             labelName.AutoSize = true;
-            labelName.Font = new Font("Century Gothic", 18F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
+            labelName.Font = new Font("Century Gothic", 18F, FontStyle.Bold | FontStyle.Underline);
             labelName.ForeColor = SystemColors.Control;
             labelName.Location = new Point(12, 5);
             labelName.Name = "labelName";
@@ -106,7 +111,7 @@
             btnCancel.FlatAppearance.BorderSize = 0;
             btnCancel.FlatStyle = FlatStyle.Flat;
             btnCancel.ForeColor = SystemColors.ActiveCaptionText;
-            btnCancel.Location = new Point(741, 317);
+            btnCancel.Location = new Point(741, 362);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(94, 35);
             btnCancel.TabIndex = 12;
@@ -121,7 +126,7 @@
             btnUpdate.FlatAppearance.BorderSize = 0;
             btnUpdate.FlatStyle = FlatStyle.Flat;
             btnUpdate.ForeColor = SystemColors.Control;
-            btnUpdate.Location = new Point(641, 317);
+            btnUpdate.Location = new Point(641, 362);
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(94, 35);
             btnUpdate.TabIndex = 11;
@@ -150,7 +155,6 @@
             age.ImeMode = ImeMode.NoControl;
             age.Location = new Point(578, 87);
             age.Maximum = new decimal(new int[] { 9999, 0, 0, 0 });
-            age.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             age.Name = "age";
             age.Size = new Size(168, 30);
             age.TabIndex = 26;
@@ -178,7 +182,6 @@
             subjId.ImeMode = ImeMode.NoControl;
             subjId.Location = new Point(578, 155);
             subjId.Maximum = new decimal(new int[] { 9999, 0, 0, 0 });
-            subjId.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             subjId.Name = "subjId";
             subjId.Size = new Size(168, 30);
             subjId.TabIndex = 30;
@@ -194,7 +197,6 @@
             label3.Size = new Size(106, 22);
             label3.TabIndex = 29;
             label3.Text = "Subject Id:";
-            label3.Click += label3_Click;
             // 
             // label4
             // 
@@ -238,12 +240,65 @@
             label6.TabIndex = 35;
             label6.Text = "Age:";
             // 
+            // passlbl
+            // 
+            passlbl.AutoSize = true;
+            passlbl.Location = new Point(443, 300);
+            passlbl.Name = "passlbl";
+            passlbl.Size = new Size(100, 22);
+            passlbl.TabIndex = 39;
+            passlbl.Text = "Password:";
+            // 
+            // textPass
+            // 
+            textPass.Location = new Point(578, 290);
+            textPass.Name = "textPass";
+            textPass.PasswordChar = '*';
+            textPass.Size = new Size(195, 30);
+            textPass.TabIndex = 38;
+            // 
+            // usernamelbl
+            // 
+            usernamelbl.AutoSize = true;
+            usernamelbl.Location = new Point(45, 300);
+            usernamelbl.Name = "usernamelbl";
+            usernamelbl.Size = new Size(101, 22);
+            usernamelbl.TabIndex = 37;
+            usernamelbl.Text = "Username";
+            // 
+            // textUsername
+            // 
+            textUsername.Location = new Point(179, 290);
+            textUsername.Name = "textUsername";
+            textUsername.Size = new Size(195, 30);
+            textUsername.TabIndex = 36;
+            // 
+            // btnSave
+            // 
+            btnSave.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnSave.BackColor = Color.FromArgb(0, 70, 160);
+            btnSave.FlatAppearance.BorderSize = 0;
+            btnSave.FlatStyle = FlatStyle.Flat;
+            btnSave.ForeColor = SystemColors.Control;
+            btnSave.Location = new Point(540, 362);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(94, 35);
+            btnSave.TabIndex = 40;
+            btnSave.Text = "Save";
+            btnSave.UseVisualStyleBackColor = false;
+            btnSave.Click += btnSave_Click;
+            // 
             // TeacherModule
             // 
             AutoScaleDimensions = new SizeF(11F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(877, 373);
+            ClientSize = new Size(877, 418);
             ControlBox = false;
+            Controls.Add(btnSave);
+            Controls.Add(passlbl);
+            Controls.Add(textPass);
+            Controls.Add(usernamelbl);
+            Controls.Add(textUsername);
             Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(textPhone);
@@ -259,7 +314,7 @@
             Controls.Add(btnUpdate);
             Controls.Add(label2);
             Controls.Add(textTeacherName);
-            Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Font = new Font("Century Gothic", 11.25F);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4);
             Name = "TeacherModule";
@@ -301,5 +356,9 @@
         private Label label5;
         public TextBox textPhone;
         private Label label6;
+        private Label passlbl;
+        public TextBox textPass;
+        private Label usernamelbl;
+        private TextBox textUsername;
     }
 }
