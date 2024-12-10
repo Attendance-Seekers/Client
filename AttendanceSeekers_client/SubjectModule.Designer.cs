@@ -1,6 +1,6 @@
 ﻿namespace AttendanceSeekers_client
 {
-    partial class ClassModule
+    partial class SubjectModule
     {
         /// <summary>
         /// Required designer variable.
@@ -32,20 +32,20 @@
             labelName = new Label();
             pictureBox = new PictureBox();
             picClose = new PictureBox();
-            lblId = new Label();
             btnCancel = new Button();
             btnUpdate = new Button();
             label2 = new Label();
+            textSubjectName = new TextBox();
+            subjectDuration = new NumericUpDown();
+            deptId = new NumericUpDown();
+            label3 = new Label();
+            label6 = new Label();
             btnSave = new Button();
-            textClassName = new TextBox();
-            Class_Size = new Label();
-            Size = new NumericUpDown();
-            Class_id = new NumericUpDown();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picClose).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)Size).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)Class_id).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)subjectDuration).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)deptId).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -59,7 +59,7 @@
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.RightToLeft = RightToLeft.No;
-            panel1.Size = new Size(755, 50);
+            panel1.Size = new Size(877, 50);
             panel1.TabIndex = 7;
             // 
             // labelName
@@ -69,15 +69,15 @@
             labelName.ForeColor = SystemColors.Control;
             labelName.Location = new Point(12, 5);
             labelName.Name = "labelName";
-            labelName.Size = new Size(211, 37);
+            labelName.Size = new Size(244, 37);
             labelName.TabIndex = 0;
-            labelName.Text = "Class Module";
+            labelName.Text = "Subject Module";
             // 
             // pictureBox
             // 
             pictureBox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pictureBox.BackgroundImage = Properties.Resources.Close_Window;
-            pictureBox.Location = new Point(727, 5);
+            pictureBox.Location = new Point(849, 5);
             pictureBox.Name = "pictureBox";
             pictureBox.Size = new Size(28, 30);
             pictureBox.TabIndex = 2;
@@ -88,23 +88,11 @@
             // 
             picClose.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             picClose.Image = Properties.Resources.Class;
-            picClose.Location = new Point(1242, 0);
+            picClose.Location = new Point(1364, 0);
             picClose.Name = "picClose";
             picClose.Size = new Size(28, 30);
             picClose.TabIndex = 1;
             picClose.TabStop = false;
-            // 
-            // lblId
-            // 
-            lblId.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            lblId.AutoSize = true;
-            lblId.BorderStyle = BorderStyle.FixedSingle;
-            lblId.Location = new Point(46, 139);
-            lblId.Name = "lblId";
-            lblId.Size = new Size(28, 24);
-            lblId.TabIndex = 13;
-            lblId.Text = "id";
-            lblId.Visible = false;
             // 
             // btnCancel
             // 
@@ -113,7 +101,7 @@
             btnCancel.FlatAppearance.BorderSize = 0;
             btnCancel.FlatStyle = FlatStyle.Flat;
             btnCancel.ForeColor = SystemColors.ActiveCaptionText;
-            btnCancel.Location = new Point(619, 132);
+            btnCancel.Location = new Point(741, 238);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(94, 35);
             btnCancel.TabIndex = 12;
@@ -128,7 +116,7 @@
             btnUpdate.FlatAppearance.BorderSize = 0;
             btnUpdate.FlatStyle = FlatStyle.Flat;
             btnUpdate.ForeColor = SystemColors.Control;
-            btnUpdate.Location = new Point(519, 132);
+            btnUpdate.Location = new Point(641, 238);
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(94, 35);
             btnUpdate.TabIndex = 11;
@@ -139,11 +127,61 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(46, 90);
+            label2.Location = new Point(22, 93);
             label2.Name = "label2";
-            label2.Size = new Size(121, 22);
+            label2.Size = new Size(144, 22);
             label2.TabIndex = 10;
-            label2.Text = "Class Name:";
+            label2.Text = "Subject Name:";
+            // 
+            // textSubjectName
+            // 
+            textSubjectName.Location = new Point(179, 87);
+            textSubjectName.Name = "textSubjectName";
+            textSubjectName.Size = new Size(195, 30);
+            textSubjectName.TabIndex = 8;
+            // 
+            // subjectDuration
+            // 
+            subjectDuration.ImeMode = ImeMode.NoControl;
+            subjectDuration.Location = new Point(607, 93);
+            subjectDuration.Maximum = new decimal(new int[] { 9999, 0, 0, 0 });
+            subjectDuration.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            subjectDuration.Name = "subjectDuration";
+            subjectDuration.Size = new Size(168, 30);
+            subjectDuration.TabIndex = 26;
+            subjectDuration.TextAlign = HorizontalAlignment.Center;
+            subjectDuration.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            // 
+            // deptId
+            // 
+            deptId.ImeMode = ImeMode.NoControl;
+            deptId.Location = new Point(386, 171);
+            deptId.Maximum = new decimal(new int[] { 9999, 0, 0, 0 });
+            deptId.Name = "deptId";
+            deptId.Size = new Size(168, 30);
+            deptId.TabIndex = 30;
+            deptId.TextAlign = HorizontalAlignment.Center;
+            deptId.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(213, 175);
+            label3.Name = "label3";
+            label3.RightToLeft = RightToLeft.No;
+            label3.Size = new Size(151, 22);
+            label3.TabIndex = 29;
+            label3.Text = "Department Id:";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(434, 96);
+            label6.Name = "label6";
+            label6.RightToLeft = RightToLeft.No;
+            label6.Size = new Size(167, 22);
+            label6.TabIndex = 35;
+            label6.Text = "Subject Duration:";
             // 
             // btnSave
             // 
@@ -152,83 +190,42 @@
             btnSave.FlatAppearance.BorderSize = 0;
             btnSave.FlatStyle = FlatStyle.Flat;
             btnSave.ForeColor = SystemColors.Control;
-            btnSave.Location = new Point(419, 133);
+            btnSave.Location = new Point(541, 238);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(94, 35);
-            btnSave.TabIndex = 9;
+            btnSave.TabIndex = 36;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = false;
             btnSave.Click += btnSave_Click;
             // 
-            // textClassName
-            // 
-            textClassName.Location = new Point(179, 87);
-            textClassName.Name = "textClassName";
-            textClassName.Size = new Size(195, 30);
-            textClassName.TabIndex = 8;
-            // 
-            // Class_Size
-            // 
-            Class_Size.AutoSize = true;
-            Class_Size.Location = new Point(474, 90);
-            Class_Size.Name = "Class_Size";
-            Class_Size.RightToLeft = RightToLeft.No;
-            Class_Size.Size = new Size(47, 22);
-            Class_Size.TabIndex = 14;
-            Class_Size.Text = "Size:";
-            // 
-            // Size
-            // 
-            Size.ImeMode = ImeMode.NoControl;
-            Size.Location = new Point(519, 90);
-            Size.Maximum = new decimal(new int[] { 9999, 0, 0, 0 });
-            Size.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
-            Size.Name = "Size";
-            Size.Size = new Size(168, 30);
-            Size.TabIndex = 26;
-            Size.TextAlign = HorizontalAlignment.Center;
-            Size.Value = new decimal(new int[] { 1, 0, 0, 0 });
-            // 
-            // Class_id
-            // 
-            Class_id.ImeMode = ImeMode.NoControl;
-            Class_id.Location = new Point(83, 137);
-            Class_id.Maximum = new decimal(new int[] { 99999, 0, 0, 0 });
-            Class_id.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
-            Class_id.Name = "Class_id";
-            Class_id.Size = new Size(61, 30);
-            Class_id.TabIndex = 28;
-            Class_id.TextAlign = HorizontalAlignment.Center;
-            Class_id.Value = new decimal(new int[] { 1, 0, 0, 0 });
-            // 
-            // ClassModule
+            // SubjectModule
             // 
             AutoScaleDimensions = new SizeF(11F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(755, 188);
+            ClientSize = new Size(877, 294);
             ControlBox = false;
+            Controls.Add(btnSave);
+            Controls.Add(label6);
+            Controls.Add(deptId);
+            Controls.Add(label3);
             Controls.Add(panel1);
-            Controls.Add(Class_id);
-            Controls.Add(Size);
-            Controls.Add(Class_Size);
-            Controls.Add(lblId);
+            Controls.Add(subjectDuration);
             Controls.Add(btnCancel);
             Controls.Add(btnUpdate);
             Controls.Add(label2);
-            Controls.Add(btnSave);
-            Controls.Add(textClassName);
+            Controls.Add(textSubjectName);
             Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4);
-            Name = "ClassModule";
+            Name = "SubjectModule";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ProductModule";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox).EndInit();
             ((System.ComponentModel.ISupportInitialize)picClose).EndInit();
-            ((System.ComponentModel.ISupportInitialize)Size).EndInit();
-            ((System.ComponentModel.ISupportInitialize)Class_id).EndInit();
+            ((System.ComponentModel.ISupportInitialize)subjectDuration).EndInit();
+            ((System.ComponentModel.ISupportInitialize)deptId).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -238,15 +235,19 @@
         public Panel panel1;
         private PictureBox picClose;
         private Label labelName;
-        public Label lblId;
         public Button btnCancel;
         public Button btnUpdate;
         private Label label2;
+        private TextBox textSubjectName;
+        private NumericUpDown subjectDuration;
         public Button btnSave;
-        public TextBox textClassName;
+     
         private PictureBox pictureBox;
-        private Label Class_Size;
-        public NumericUpDown Size;
-        public NumericUpDown Class_id;
+        private NumericUpDown deptId;
+        public TextBox textBox1;
+        public NumericUpDown numericUpDown1;
+        private Label label3;
+        public TextBox textBox2;
+        private Label label6;
     }
 }

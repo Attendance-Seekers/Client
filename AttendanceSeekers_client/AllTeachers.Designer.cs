@@ -1,6 +1,6 @@
 ﻿namespace AttendanceSeekers_client
 {
-    partial class AllClasses
+    partial class AllTeachers
     {
         /// <summary>
         /// Required designer variable.
@@ -31,14 +31,8 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AllClasses));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AllTeachers));
             dgvClass = new Bunifu.UI.WinForms.BunifuDataGridView();
-            Id = new DataGridViewTextBoxColumn();
-            ClassName = new DataGridViewTextBoxColumn();
-            ClassSize = new DataGridViewTextBoxColumn();
-            Show = new DataGridViewImageColumn();
-            Edit = new DataGridViewImageColumn();
-            Delete = new DataGridViewImageColumn();
             panel1 = new Panel();
             btnAdd = new Button();
             txtSearch = new TextBox();
@@ -70,7 +64,6 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             dgvClass.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvClass.ColumnHeadersHeight = 40;
-            dgvClass.Columns.AddRange(new DataGridViewColumn[] { Id, ClassName, ClassSize, Show, Edit, Delete });
             dgvClass.CurrentTheme.AlternatingRowsStyle.BackColor = Color.FromArgb(248, 251, 255);
             dgvClass.CurrentTheme.AlternatingRowsStyle.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
             dgvClass.CurrentTheme.AlternatingRowsStyle.ForeColor = Color.Black;
@@ -113,66 +106,6 @@
             dgvClass.TabIndex = 1;
             dgvClass.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             dgvClass.CellMouseDoubleClick += dgvClass_CellMouseDoubleClick;
-            dgvClass.RowHeaderMouseDoubleClick += dgvClass_RowHeaderMouseDoubleClick;
-            // 
-            // Id
-            // 
-            Id.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            Id.DataPropertyName = "Class_Id";
-            Id.HeaderText = "ID";
-            Id.MinimumWidth = 6;
-            Id.Name = "Id";
-            Id.ReadOnly = true;
-            Id.Width = 59;
-            // 
-            // ClassName
-            // 
-            ClassName.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            ClassName.DataPropertyName = "Class_Name";
-            ClassName.HeaderText = "Name";
-            ClassName.MinimumWidth = 6;
-            ClassName.Name = "ClassName";
-            ClassName.ReadOnly = true;
-            ClassName.Width = 93;
-            // 
-            // ClassSize
-            // 
-            ClassSize.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            ClassSize.DataPropertyName = "Class_Size";
-            ClassSize.HeaderText = "Size";
-            ClassSize.MinimumWidth = 6;
-            ClassSize.Name = "ClassSize";
-            ClassSize.ReadOnly = true;
-            // 
-            // Show
-            // 
-            Show.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            Show.HeaderText = "";
-            Show.Image = Properties.Resources.Eye;
-            Show.MinimumWidth = 6;
-            Show.Name = "Show";
-            Show.ReadOnly = true;
-            Show.Width = 6;
-            // 
-            // Edit
-            // 
-            Edit.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            Edit.HeaderText = "";
-            Edit.Image = Properties.Resources.Edit;
-            Edit.MinimumWidth = 6;
-            Edit.Name = "Edit";
-            Edit.ReadOnly = true;
-            Edit.Width = 6;
-            // 
-            // Delete
-            // 
-            Delete.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            Delete.HeaderText = "";
-            Delete.Image = Properties.Resources.Delete;
-            Delete.MinimumWidth = 6;
-            Delete.Name = "Delete";
-            Delete.ReadOnly = true;
-            Delete.Width = 6;
             // 
             // panel1
             // 
@@ -220,12 +153,12 @@
             label1.ImageAlign = ContentAlignment.MiddleLeft;
             label1.Location = new Point(10, 9);
             label1.Name = "label1";
-            label1.Size = new Size(209, 71);
+            label1.Size = new Size(230, 71);
             label1.TabIndex = 3;
-            label1.Text = "Manage Class";
+            label1.Text = "Manage Teacher";
             label1.TextAlign = ContentAlignment.MiddleRight;
             // 
-            // AllClasses
+            // AllTeachers
             // 
             AutoScaleDimensions = new SizeF(11F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -234,7 +167,7 @@
             Controls.Add(dgvClass);
             Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Margin = new Padding(4);
-            Name = "AllClasses";
+            Name = "AllTeachers";
             Text = "AllClasses";
             ((System.ComponentModel.ISupportInitialize)dgvClass).EndInit();
             panel1.ResumeLayout(false);
@@ -248,12 +181,6 @@
         private Panel panel1;
         private TextBox txtSearch;
         private Label label1;
-        private DataGridViewTextBoxColumn Id;
-        private DataGridViewTextBoxColumn ClassName;
-        private DataGridViewTextBoxColumn ClassSize;
-        private DataGridViewImageColumn Show;
-        private DataGridViewImageColumn Edit;
-        private DataGridViewImageColumn Delete;
         private Button btnAdd;
     }
 }
