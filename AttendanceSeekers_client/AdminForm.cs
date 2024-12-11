@@ -2,20 +2,8 @@
 using Attendance_Student.DTOs.DepartmentDTO;
 using Attendance_Student.DTOs.StudentDTO;
 using Attendance_Student.DTOs.TeacherDTO;
-using Bunifu.Licensing.Models;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using static System.Net.WebRequestMethods;
 
 namespace AttendanceSeekers_client
 {
@@ -65,9 +53,11 @@ namespace AttendanceSeekers_client
                 }
                 else
                 {
-                    throw new Exception($"Failed to fetch data: {response.StatusCode}");
+                string errorMessage = await response.Content.ReadAsStringAsync();
+                MessageBox.Show($"Failed to fetch data: {response.StatusCode}\nDetails: {errorMessage}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return new List<SelectStudentDTO>();
                 }
-            
+
         }
         private async Task<List<SelectDepartmentDTO>> FetchDeptDataFromAPI()
         {
@@ -87,7 +77,9 @@ namespace AttendanceSeekers_client
                 }
                 else
                 {
-                    throw new Exception($"Failed to fetch data: {response.StatusCode}");
+                string errorMessage = await response.Content.ReadAsStringAsync();
+                MessageBox.Show($"Failed to fetch data: {response.StatusCode}\nDetails: {errorMessage}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return new List<SelectDepartmentDTO>();
                 }
             
         }
@@ -102,15 +94,17 @@ namespace AttendanceSeekers_client
                     new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", GlobalConfig.Instance.Token);
             }
             HttpResponseMessage response = await _httpClient.GetAsync(ApiURL);
-                if (response.StatusCode == HttpStatusCode.OK)
-                {
-                    string json = await response.Content.ReadAsStringAsync();
-                    return JsonConvert.DeserializeObject<List<SelectClassDTO>>(json);
-                }
-                else
-                {
-                    throw new Exception($"Failed to fetch data: {response.StatusCode}");
-                }
+            if (response.StatusCode == HttpStatusCode.OK)
+            {
+                string json = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<List<SelectClassDTO>>(json);
+            }
+            else
+            {
+                string errorMessage = await response.Content.ReadAsStringAsync();
+                MessageBox.Show($"Failed to fetch data: {response.StatusCode}\nDetails: {errorMessage}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return new List<SelectClassDTO>();
+            }
             
         }
         private async Task<List<SelectTeacherDTO>> FetchTeacherDataFromAPI()
@@ -124,15 +118,17 @@ namespace AttendanceSeekers_client
                     new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", GlobalConfig.Instance.Token);
             }
             HttpResponseMessage response = await _httpClient.GetAsync(ApiURL);
-                if (response.StatusCode == HttpStatusCode.OK)
-                {
-                    string json = await response.Content.ReadAsStringAsync();
-                    return JsonConvert.DeserializeObject<List<SelectTeacherDTO>>(json);
-                }
-                else
-                {
-                    throw new Exception($"Failed to fetch data: {response.StatusCode}");
-                }
+            if (response.StatusCode == HttpStatusCode.OK)
+            {
+                string json = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<List<SelectTeacherDTO>>(json);
+            }
+            else
+            {
+                string errorMessage = await response.Content.ReadAsStringAsync();
+                MessageBox.Show($"Failed to fetch data: {response.StatusCode}\nDetails: {errorMessage}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return new List<SelectTeacherDTO>();
+            }
             
         }
        

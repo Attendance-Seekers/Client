@@ -1,24 +1,6 @@
-﻿using Attendance_Student.DTOs.StudentDTO;
+﻿using Attendance_Student.DTOs.ParentDTOs;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Net.Http;
 using System.Net;
-using System.Text;
-using System.Text.Json;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Attendance_Student.DTOs.ClassDTO;
-using Attendance_Student.DTOs.Account_DTOs;
-using static AttendanceSeekers_client.LoginForm;
-using Microsoft.AspNetCore.Mvc;
-
-using static System.Net.WebRequestMethods;
-using Attendance_Student.DTOs.ParentDTOs;
 
 namespace AttendanceSeekers_client
 {
@@ -51,7 +33,6 @@ namespace AttendanceSeekers_client
         }
         private async Task<List<ParentResponseDto>> FetchDataFromAPI()
         {
-
             string ApiURL = "api/Parent";
             if (!string.IsNullOrWhiteSpace(GlobalConfig.Instance.Token))
             {
@@ -67,19 +48,21 @@ namespace AttendanceSeekers_client
             }
             else
             {
-                throw new Exception($"Failed to fetch data: {response.StatusCode}");
+                string errorMessage = await response.Content.ReadAsStringAsync();
+                MessageBox.Show($"Failed to fetch data: {response.StatusCode}\nDetails: {errorMessage}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return new List<ParentResponseDto>();
             }
-
         }
+
         private async Task<ParentResponseDto> FetchDataFromAPIUsingId(string id)
         {
-
             string ApiURL = $"api/Parent/{id}";
             if (!string.IsNullOrWhiteSpace(GlobalConfig.Instance.Token))
             {
                 _httpClient.DefaultRequestHeaders.Authorization =
                     new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", GlobalConfig.Instance.Token);
             }
+
             HttpResponseMessage response = await _httpClient.GetAsync(ApiURL);
             if (response.StatusCode == HttpStatusCode.OK)
             {
@@ -88,11 +71,12 @@ namespace AttendanceSeekers_client
             }
             else
             {
-                throw new Exception($"Failed to fetch data: {response.StatusCode}");
+                string errorMessage = await response.Content.ReadAsStringAsync();
+                MessageBox.Show($"Failed to fetch data: {response.StatusCode}\nDetails: {errorMessage}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return new ParentResponseDto();
             }
-
         }
-        
+
         private async void btnAdd_Click(object sender, EventArgs e)
         {
           

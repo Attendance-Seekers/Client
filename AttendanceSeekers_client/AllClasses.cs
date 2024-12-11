@@ -1,21 +1,7 @@
-﻿using Attendance_Student.DTOs.StudentDTO;
+﻿using Attendance_Student.DTOs.ClassDTO;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Net.Http;
 using System.Net;
 using System.Text;
-using System.Text.Json;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Attendance_Student.DTOs.ClassDTO;
-using Attendance_Student.DTOs.Account_DTOs;
-using static AttendanceSeekers_client.LoginForm;
-using Microsoft.AspNetCore.Mvc;
 
 namespace AttendanceSeekers_client
 {
@@ -48,9 +34,16 @@ namespace AttendanceSeekers_client
         }
         private async Task<List<SelectClassDTO>> FetchDataFromAPI()
         {
-
             string ApiURL = "api/classes";
+
+            if (!string.IsNullOrWhiteSpace(GlobalConfig.Instance.Token))
+            {
+                _httpClient.DefaultRequestHeaders.Authorization =
+                    new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", GlobalConfig.Instance.Token);
+            }
+
             HttpResponseMessage response = await _httpClient.GetAsync(ApiURL);
+
             if (response.StatusCode == HttpStatusCode.OK)
             {
                 string json = await response.Content.ReadAsStringAsync();
@@ -58,15 +51,24 @@ namespace AttendanceSeekers_client
             }
             else
             {
-                throw new Exception($"Failed to fetch data: {response.StatusCode}");
+                string errorMessage = await response.Content.ReadAsStringAsync();
+                MessageBox.Show($"Failed to fetch data: {response.StatusCode}\nDetails: {errorMessage}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return new List<SelectClassDTO>(); // Return an empty list to avoid exceptions
             }
-
         }
+
         private async Task<SelectClassDTO> FetchDataFromAPIUsingId(int id)
         {
-
             string ApiURL = $"api/classes/{id}";
+
+            if (!string.IsNullOrWhiteSpace(GlobalConfig.Instance.Token))
+            {
+                _httpClient.DefaultRequestHeaders.Authorization =
+                    new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", GlobalConfig.Instance.Token);
+            }
+
             HttpResponseMessage response = await _httpClient.GetAsync(ApiURL);
+
             if (response.StatusCode == HttpStatusCode.OK)
             {
                 string json = await response.Content.ReadAsStringAsync();
@@ -74,10 +76,12 @@ namespace AttendanceSeekers_client
             }
             else
             {
-                throw new Exception($"Failed to fetch data: {response.StatusCode}");
+                string errorMessage = await response.Content.ReadAsStringAsync();
+                MessageBox.Show($"Failed to fetch data: {response.StatusCode}\nDetails: {errorMessage}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return new SelectClassDTO();
             }
-
         }
+
         private async Task<HttpStatusCode> PostDataFromAPI(AddClassDTO addClassDTO)
         {
             try

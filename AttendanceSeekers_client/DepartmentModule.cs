@@ -1,13 +1,7 @@
-﻿using Attendance_Student.DTOs.ClassDTO;
-using AttendanceSeekers_client.Services;
+﻿using Attendance_Student.DTOs.DepartmentDTO;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System.Net.Http;
 using System.Net;
 using System.Text;
-using System.Text.Json;
-using static System.Net.WebRequestMethods;
-using Attendance_Student.DTOs.DepartmentDTO;
 
 namespace AttendanceSeekers_client
 {
