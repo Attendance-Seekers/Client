@@ -1,16 +1,25 @@
+using Attendance_Student.DTOs.AdminDTOs;
+using Attendance_Student.DTOs.ParentDTOs;
+using Attendance_Student.DTOs.TeacherDTO;
+using AttendanceSeekers_client.Services;
+using Newtonsoft.Json;
 using System.Data.SqlClient;
 using System.Net;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 namespace AttendanceSeekers_client
 {
     public partial class MainForm : Form
     {
         HttpClient _httpClient = GlobalConfig.Instance.HttpClient;
+        string Id = GlobalConfig.Instance.Id;
+        Requests _request;
         public MainForm()
         {
             InitializeComponent();
             customizeDesing();
             lblRole.Text = GlobalConfig.Instance.role;
             lblUsername.Text = GlobalConfig.Instance.username;
+
             //_httpClient = new HttpClient();
         }
         #region panelSlide
@@ -133,7 +142,7 @@ namespace AttendanceSeekers_client
 
         private void btnSubjectsList_Click(object sender, EventArgs e)
         {
-            AllSubjcets allSubjcets = new AllSubjcets();    
+            AllSubjcets allSubjcets = new AllSubjcets();
             allSubjcets.ShowDialog();
         }
 
@@ -145,7 +154,7 @@ namespace AttendanceSeekers_client
 
         private void btnParentList_Click(object sender, EventArgs e)
         {
-             AllParents allParents = new AllParents();
+            AllParents allParents = new AllParents();
             allParents.ShowDialog();
         }
 
@@ -155,7 +164,7 @@ namespace AttendanceSeekers_client
             welcomeForm welcome = new welcomeForm();
             this.Hide();
             welcome.ShowDialog();
-            this.Close();    
+            this.Close();
         }
 
         private async Task LogoutClientAsync()
@@ -190,6 +199,58 @@ namespace AttendanceSeekers_client
             }
         }
 
+        private async void btnProfile_Click(object sender, EventArgs e)
+        {
+            string api = "";
+            object profileData = null;
+
+            if (GlobalConfig.Instance.role == "Teacher")
+            {
+                api = $"api/Teacher/{Id}";
+                profileData = await FetchDataFromAPIUsingId<SelectTeacherDTO>( api);
+            }
+            else if (GlobalConfig.Instance.role == "Parent")
+            {
+                api = $"api/Parent/{Id}";
+                profileData = await FetchDataFromAPIUsingId<ParentResponseDto>( api);
+            }
+            else if (GlobalConfig.Instance.role == "Admin")
+            {
+                api = $"api/Admin/{Id}";
+                profileData = await FetchDataFromAPIUsingId<AdminDTO>( api);
+            }
+
+            if (profileData != null)
+            {
+                ProfileModule profileModule = new ProfileModule(profileData);
+                profileModule.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Failed to load profile data.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private async Task<T> FetchDataFromAPIUsingId<T>( string ApiURL)
+        {
+            if (!string.IsNullOrWhiteSpace(GlobalConfig.Instance.Token))
+            {
+                _httpClient.DefaultRequestHeaders.Authorization =
+                    new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", GlobalConfig.Instance.Token);
+            }
+
+            HttpResponseMessage response = await _httpClient.GetAsync(ApiURL);
+            if (response.StatusCode == HttpStatusCode.OK)
+            {
+                string json = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<T>(json); // Deserialize to T
+            }
+            else
+            {
+                string errorMessage = await response.Content.ReadAsStringAsync();
+                MessageBox.Show($"Failed to fetch data: {response.StatusCode}\nDetails: {errorMessage}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return default(T); // Return the default value of T
+            }
+        }
         //private void btnStockEntry_Click(object sender, EventArgs e)
         //{
         //    openChildrenForm(new StockIn());

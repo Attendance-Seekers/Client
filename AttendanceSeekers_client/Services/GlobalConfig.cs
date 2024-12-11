@@ -9,6 +9,7 @@ public class GlobalConfig
     public string Token { get; set; } 
     public string role { get; set; }
     public string username { get; set; }
+    public string Id { get; set; }
     private GlobalConfig()
     {
         HttpClient = new HttpClient

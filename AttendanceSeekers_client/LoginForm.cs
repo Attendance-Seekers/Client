@@ -58,6 +58,7 @@ namespace AttendanceSeekers_client
                     {
                         GlobalConfig.Instance.Token = responseData.Token;
                         GlobalConfig.Instance.username = responseData.Username;
+                        GlobalConfig.Instance.Id = responseData.Id;
 
                         // Display the token in a textbox or use it as needed
                         MessageBox.Show($"Token is {GlobalConfig.Instance.Token}", "TOKEN", MessageBoxButtons.OK);
@@ -103,6 +104,7 @@ namespace AttendanceSeekers_client
         {
             public string Token { get; set; }
             public string Username { get; set; }
+            public string Id { get; set; }
             public List<string> roles { get; set; }
         }
 

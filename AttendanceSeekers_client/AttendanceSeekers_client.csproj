@@ -40,6 +40,9 @@
     <Compile Update="ParentModule.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="ProfileModule.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="TeacherModule.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,6 +61,9 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Update="ParentModule.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ProfileModule.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Update="TeacherModule.resx">

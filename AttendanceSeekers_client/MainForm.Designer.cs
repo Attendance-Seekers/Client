@@ -69,7 +69,7 @@
             panelTitle.Dock = DockStyle.Top;
             panelTitle.Location = new Point(228, 0);
             panelTitle.Name = "panelTitle";
-            panelTitle.Size = new Size(1035, 40);
+            panelTitle.Size = new Size(1131, 40);
             panelTitle.TabIndex = 1;
             // 
             // lblTitle
@@ -94,7 +94,7 @@
             panelMain.Name = "panelMain";
             panelMain.Padding = new Padding(0, 40, 0, 0);
             panelMain.RightToLeft = RightToLeft.No;
-            panelMain.Size = new Size(1035, 817);
+            panelMain.Size = new Size(1131, 817);
             panelMain.TabIndex = 2;
             // 
             // panelSlide
@@ -363,6 +363,7 @@
             btnProfile.Text = "Profile";
             btnProfile.TextAlign = ContentAlignment.MiddleLeft;
             btnProfile.UseVisualStyleBackColor = true;
+            btnProfile.Click += btnProfile_Click;
             // 
             // panelLogo
             // 
@@ -411,7 +412,7 @@
             AutoScaleDimensions = new SizeF(11F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(0, 70, 160);
-            ClientSize = new Size(1263, 817);
+            ClientSize = new Size(1359, 817);
             Controls.Add(panelTitle);
             Controls.Add(panelMain);
             Controls.Add(panelSlide);
