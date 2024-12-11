@@ -1,4 +1,9 @@
-﻿using Attendance_Student.DTOs.StudentDTO;
+﻿using Attendance_Student.Models;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+using Attendance_Student.DTOs.TimeTableDTO;
+using Attendance_Student.DTOs.SubjectDTO;
+using Attendance_Student.DTOs.StudentDTO;
 
 namespace Attendance_Student.DTOs.AttendanceDTOs
 {

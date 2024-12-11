@@ -20,7 +20,7 @@ namespace Attendance_Student.DTOs.ParentDTOs
         public string Password { get; set; }
 
         [Required]
-        public string Role { get; set; } = "Parent";// Role added for role-based registration
+        public string Role { get; set; } // Role added for role-based registration
 
         [Required]
         public string Username { get; set; } // Username added for user creation

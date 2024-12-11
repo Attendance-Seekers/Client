@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Attendance_Student.DTOs.TeacherDTO;
+using Attendance_Student.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace Attendance_Student.DTOs.SubjectDTO
 {
