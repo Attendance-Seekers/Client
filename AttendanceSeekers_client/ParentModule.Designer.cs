@@ -35,16 +35,12 @@
             btnCancel = new Button();
             btnUpdate = new Button();
             label2 = new Label();
-            textTeacherName = new TextBox();
+            textParentName = new TextBox();
             age = new NumericUpDown();
             label1 = new Label();
             textAddress = new TextBox();
-            subjId = new NumericUpDown();
-            label3 = new Label();
             label4 = new Label();
             textEmail = new TextBox();
-            label5 = new Label();
-            textPhone = new TextBox();
             label6 = new Label();
             passlbl = new Label();
             textPass = new TextBox();
@@ -55,7 +51,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picClose).BeginInit();
             ((System.ComponentModel.ISupportInitialize)age).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)subjId).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -111,7 +106,7 @@
             btnCancel.FlatAppearance.BorderSize = 0;
             btnCancel.FlatStyle = FlatStyle.Flat;
             btnCancel.ForeColor = SystemColors.ActiveCaptionText;
-            btnCancel.Location = new Point(741, 362);
+            btnCancel.Location = new Point(741, 307);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(94, 35);
             btnCancel.TabIndex = 12;
@@ -126,7 +121,7 @@
             btnUpdate.FlatAppearance.BorderSize = 0;
             btnUpdate.FlatStyle = FlatStyle.Flat;
             btnUpdate.ForeColor = SystemColors.Control;
-            btnUpdate.Location = new Point(641, 362);
+            btnUpdate.Location = new Point(641, 307);
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(94, 35);
             btnUpdate.TabIndex = 11;
@@ -139,16 +134,16 @@
             label2.AutoSize = true;
             label2.Location = new Point(22, 92);
             label2.Name = "label2";
-            label2.Size = new Size(151, 22);
+            label2.Size = new Size(137, 22);
             label2.TabIndex = 10;
-            label2.Text = "Teacher Name:";
+            label2.Text = "Parent Name:";
             // 
-            // textTeacherName
+            // textParentName
             // 
-            textTeacherName.Location = new Point(179, 87);
-            textTeacherName.Name = "textTeacherName";
-            textTeacherName.Size = new Size(195, 30);
-            textTeacherName.TabIndex = 8;
+            textParentName.Location = new Point(179, 87);
+            textParentName.Name = "textParentName";
+            textParentName.Size = new Size(195, 30);
+            textParentName.TabIndex = 8;
             // 
             // age
             // 
@@ -177,27 +172,6 @@
             textAddress.Size = new Size(195, 30);
             textAddress.TabIndex = 27;
             // 
-            // subjId
-            // 
-            subjId.ImeMode = ImeMode.NoControl;
-            subjId.Location = new Point(578, 155);
-            subjId.Maximum = new decimal(new int[] { 9999, 0, 0, 0 });
-            subjId.Name = "subjId";
-            subjId.Size = new Size(168, 30);
-            subjId.TabIndex = 30;
-            subjId.TextAlign = HorizontalAlignment.Center;
-            subjId.Value = new decimal(new int[] { 1, 0, 0, 0 });
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(443, 159);
-            label3.Name = "label3";
-            label3.RightToLeft = RightToLeft.No;
-            label3.Size = new Size(106, 22);
-            label3.TabIndex = 29;
-            label3.Text = "Subject Id:";
-            // 
             // label4
             // 
             label4.AutoSize = true;
@@ -214,22 +188,6 @@
             textEmail.Size = new Size(195, 30);
             textEmail.TabIndex = 31;
             // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(443, 226);
-            label5.Name = "label5";
-            label5.Size = new Size(110, 22);
-            label5.TabIndex = 34;
-            label5.Text = "Phone No.:";
-            // 
-            // textPhone
-            // 
-            textPhone.Location = new Point(578, 216);
-            textPhone.Name = "textPhone";
-            textPhone.Size = new Size(195, 30);
-            textPhone.TabIndex = 33;
-            // 
             // label6
             // 
             label6.AutoSize = true;
@@ -243,7 +201,7 @@
             // passlbl
             // 
             passlbl.AutoSize = true;
-            passlbl.Location = new Point(443, 300);
+            passlbl.Location = new Point(463, 228);
             passlbl.Name = "passlbl";
             passlbl.Size = new Size(100, 22);
             passlbl.TabIndex = 39;
@@ -251,7 +209,7 @@
             // 
             // textPass
             // 
-            textPass.Location = new Point(578, 290);
+            textPass.Location = new Point(598, 218);
             textPass.Name = "textPass";
             textPass.PasswordChar = '*';
             textPass.Size = new Size(195, 30);
@@ -260,7 +218,7 @@
             // usernamelbl
             // 
             usernamelbl.AutoSize = true;
-            usernamelbl.Location = new Point(45, 300);
+            usernamelbl.Location = new Point(464, 169);
             usernamelbl.Name = "usernamelbl";
             usernamelbl.Size = new Size(101, 22);
             usernamelbl.TabIndex = 37;
@@ -268,7 +226,7 @@
             // 
             // textUsername
             // 
-            textUsername.Location = new Point(179, 290);
+            textUsername.Location = new Point(598, 159);
             textUsername.Name = "textUsername";
             textUsername.Size = new Size(195, 30);
             textUsername.TabIndex = 36;
@@ -280,7 +238,7 @@
             btnSave.FlatAppearance.BorderSize = 0;
             btnSave.FlatStyle = FlatStyle.Flat;
             btnSave.ForeColor = SystemColors.Control;
-            btnSave.Location = new Point(540, 362);
+            btnSave.Location = new Point(540, 307);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(94, 35);
             btnSave.TabIndex = 40;
@@ -288,11 +246,11 @@
             btnSave.UseVisualStyleBackColor = false;
             btnSave.Click += btnSave_Click;
             // 
-            // TeacherModule
+            // ParentModule
             // 
             AutoScaleDimensions = new SizeF(11F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(877, 418);
+            ClientSize = new Size(877, 363);
             ControlBox = false;
             Controls.Add(btnSave);
             Controls.Add(passlbl);
@@ -300,12 +258,8 @@
             Controls.Add(usernamelbl);
             Controls.Add(textUsername);
             Controls.Add(label6);
-            Controls.Add(label5);
-            Controls.Add(textPhone);
             Controls.Add(label4);
             Controls.Add(textEmail);
-            Controls.Add(subjId);
-            Controls.Add(label3);
             Controls.Add(label1);
             Controls.Add(textAddress);
             Controls.Add(panel1);
@@ -313,11 +267,11 @@
             Controls.Add(btnCancel);
             Controls.Add(btnUpdate);
             Controls.Add(label2);
-            Controls.Add(textTeacherName);
+            Controls.Add(textParentName);
             Font = new Font("Century Gothic", 11.25F);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4);
-            Name = "TeacherModule";
+            Name = "ParentModule";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ProductModule";
             panel1.ResumeLayout(false);
@@ -325,7 +279,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox).EndInit();
             ((System.ComponentModel.ISupportInitialize)picClose).EndInit();
             ((System.ComponentModel.ISupportInitialize)age).EndInit();
-            ((System.ComponentModel.ISupportInitialize)subjId).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -338,7 +291,7 @@
         public Button btnCancel;
         public Button btnUpdate;
         private Label label2;
-        private TextBox textTeacherName;
+        private TextBox textParentName;
         private NumericUpDown age;
         public Button btnSave;
      
@@ -346,15 +299,11 @@
         
         private Label label1;
         private TextBox textAddress;
-        private NumericUpDown subjId;
         public TextBox textBox1;
         public NumericUpDown numericUpDown1;
-        private Label label3;
         private Label label4;
         private TextBox textEmail;
         public TextBox textBox2;
-        private Label label5;
-        public TextBox textPhone;
         private Label label6;
         private Label passlbl;
         public TextBox textPass;

@@ -1,15 +1,7 @@
-﻿using Attendance_Student.DTOs.ClassDTO;
-using AttendanceSeekers_client.Services;
+﻿using Attendance_Student.DTOs.ParentDTOs;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System.Net.Http;
 using System.Net;
 using System.Text;
-using System.Text.Json;
-using static System.Net.WebRequestMethods;
-using Attendance_Student.DTOs.TeacherDTO;
-using Attendance_Student.DTOs.SubjectDTO;
-using Attendance_Student.DTOs.ParentDTOs;
 
 namespace AttendanceSeekers_client
 {
@@ -18,7 +10,7 @@ namespace AttendanceSeekers_client
 
         HttpClient _http = GlobalConfig.Instance.HttpClient;
         string EditId;
-        //EditTeacherDTO _editTeacher;
+        
         public ParentModule()
         {
             InitializeComponent();
@@ -29,7 +21,7 @@ namespace AttendanceSeekers_client
             textUsername.Visible = true;
             usernamelbl.Visible = true;
         }
-        public ParentModule(SelectParentDTO parentDTO)
+        public ParentModule(ParentResponseDto parentDTO)
         {
             InitializeComponent();
 
@@ -40,13 +32,12 @@ namespace AttendanceSeekers_client
             btnUpdate.Enabled = true;
             btnSave.Enabled = false;
 
-            //_editTeacher = editparentDTO;
-            textAddress.Text = parentDTO.address;
-            textEmail.Text = parentDTO.
-            textPhone.Text = parentDTO.phonenumber;
-            textTeacherName.Text = parentDTO.Teacher_fullName;
-            age.Value = parentDTO.age;
-            subjId.Value = parentDTO.SubjectId;
+            textAddress.Text = parentDTO.Address;
+            textEmail.Text = parentDTO.Email;
+
+            textParentName.Text = parentDTO.Fullname;
+            age.Value = parentDTO.Age;
+            
             EditId = parentDTO.Id;
 
         }
@@ -59,10 +50,9 @@ namespace AttendanceSeekers_client
         {
             textAddress.Clear();
             textEmail.Clear();
-            textPhone.Clear();
-            textTeacherName.Clear();
+            textParentName.Clear();
             age.Value = 1;
-            subjId.Value = 1;
+            
             textUsername.Clear();
             textPass.Clear();
             this.Dispose();
@@ -82,11 +72,11 @@ namespace AttendanceSeekers_client
         }
 
 
-        private async Task<HttpStatusCode> PostDataFromAPI(AddparentDTO addparentDTO)
+        private async Task<HttpStatusCode> PostDataFromAPI(ParentCreateDto addparentDTO)
         {
             try
             {
-                string apiUrl = "api/Teacher";
+                string apiUrl = "api/Parent";
 
                 string jsonData = JsonConvert.SerializeObject(addparentDTO);
 
@@ -127,11 +117,11 @@ namespace AttendanceSeekers_client
             }
         }
 
-        private async Task<HttpStatusCode> UpdateDataFromAPI(EditparentDTO editparentDTO)
+        private async Task<HttpStatusCode> UpdateDataFromAPI(ParentUpdateDto editparentDTO)
         {
             try
             {
-                string apiUrl = $"api/Teacher"; // Assuming Class_Id is the identifier for the class to update.
+                string apiUrl = $"api/Parent/{EditId}"; // Assuming Class_Id is the identifier for the class to update.
 
                 string jsonData = JsonConvert.SerializeObject(editparentDTO);
 
@@ -158,7 +148,7 @@ namespace AttendanceSeekers_client
                 else
                 {
                     // Handle failed responses
-                    MessageBox.Show($"Failed to update Teacher. Status: {response.StatusCode}");
+                    MessageBox.Show($"Failed to update Data. Status: {response.StatusCode}");
                     return response.StatusCode;
                 }
             }
@@ -175,29 +165,27 @@ namespace AttendanceSeekers_client
 
         private async void btnUpdate_Click_1(object sender, EventArgs e)
         {
-            var _editTeacher = new EditparentDTO()
+            var _editparent = new ParentUpdateDto()
             {
-                address = textAddress.Text,
-                email = textEmail.Text,
-                phonenumber = textPhone.Text,
-                Teacher_fullName = textTeacherName.Text,
-                age = (int)age.Value,
-                SubjectId = (int)subjId.Value,
-                Id = EditId
+                Address = textAddress.Text,
+                Email = textEmail.Text,
+                Fullname = textParentName.Text,
+                Age = (int)age.Value,
+                
             };
 
             try
             {
-                var status = await UpdateDataFromAPI(_editTeacher);
+                var status = await UpdateDataFromAPI(_editparent);
 
                 if (status == HttpStatusCode.OK)
                 {
-                    MessageBox.Show($"Teacher updated successfully: {_editTeacher.Teacher_fullName}");
+                    //MessageBox.Show($"Parent updated successfully: {_editparent.Fullname}");
                     Clear();
                 }
                 else
                 {
-                    MessageBox.Show($"Failed to update teacher. Status: {status}");
+                    //MessageBox.Show($"Failed to update Parent. Status: {status}");
                 }
             }
             catch (Exception ex)
@@ -210,30 +198,28 @@ namespace AttendanceSeekers_client
        
         private async void btnSave_Click(object sender, EventArgs e)
         {
-            var _addTeacher = new AddparentDTO()
+            var _addparent = new ParentCreateDto()
             {
-                address = textAddress.Text,
-                email = textEmail.Text,
-                phonenumber = textPhone.Text,
-                Teacher_fullName = textTeacherName.Text,
-                age = (int)age.Value,
-                SubjectId = (int)subjId.Value,
-                username = textUsername.Text,
-                password = textPass.Text
+                Address = textAddress.Text,
+                Email = textEmail.Text,
+                Fullname = textParentName.Text,
+                Age = (int)age.Value,
+                Username = textUsername.Text,
+                Password = textPass.Text
             };
 
             try
             {
-                var status = await PostDataFromAPI(_addTeacher);
+                var status = await PostDataFromAPI(_addparent);
 
-                if (status == HttpStatusCode.OK)
+                if (status == HttpStatusCode.Created)
                 {
-                    MessageBox.Show($"Teacher updated successfully: {_addTeacher.Teacher_fullName}");
+                    MessageBox.Show($"Parent updated successfully: {_addparent.Fullname}");
                     Clear();
                 }
                 else
                 {
-                    MessageBox.Show($"Failed to update teacher. Status: {status}");
+                    MessageBox.Show($"Failed to update Parent. Status: {status}");
                 }
             }
             catch (Exception ex)

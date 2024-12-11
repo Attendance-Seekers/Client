@@ -16,44 +16,43 @@ using Attendance_Student.DTOs.ClassDTO;
 using Attendance_Student.DTOs.Account_DTOs;
 using static AttendanceSeekers_client.LoginForm;
 using Microsoft.AspNetCore.Mvc;
-using Attendance_Student.DTOs.TeacherDTO;
+
 using static System.Net.WebRequestMethods;
+using Attendance_Student.DTOs.ParentDTOs;
 
 namespace AttendanceSeekers_client
 {
-    public partial class AllTeachers : Form
+    public partial class AllParents : Form
     {
         HttpClient _httpClient = GlobalConfig.Instance.HttpClient;
 
 
-        public AllTeachers()
+        public AllParents()
         {
 
             InitializeComponent();
-            LoadTeachersAsync();
+            LoadParentsAsync();
 
         }
-        private async void LoadTeachersAsync()
+        private async void LoadParentsAsync()
         {
-            var teachers = await FetchDataFromAPI();
+            var Parents = await FetchDataFromAPI();
         
-            dgvClass.DataSource = teachers;
+            dgvParent.DataSource = Parents;
 
             // Now reorder the columns
-            dgvClass.Columns["Id"].DisplayIndex = 0; 
-            dgvClass.Columns["Teacher_fullName"].DisplayIndex = 1; 
-            dgvClass.Columns["address"].DisplayIndex = 2;          
-            dgvClass.Columns["age"].DisplayIndex = 3;              
-            
-            dgvClass.Columns["DeptId"].DisplayIndex = 4;           
-            dgvClass.Columns["username"].DisplayIndex = 5;         
+            dgvParent.Columns["Id"].DisplayIndex = 0; 
+            dgvParent.Columns["FullName"].DisplayIndex = 1; 
+            dgvParent.Columns["Address"].DisplayIndex = 2;          
+            dgvParent.Columns["Age"].DisplayIndex = 3;              
+            dgvParent.Columns["UserName"].DisplayIndex = 4;         
 
 
         }
-        private async Task<List<SelectTeacherDTO>> FetchDataFromAPI()
+        private async Task<List<ParentResponseDto>> FetchDataFromAPI()
         {
 
-            string ApiURL = "api/Teacher";
+            string ApiURL = "api/Parent";
             if (!string.IsNullOrWhiteSpace(GlobalConfig.Instance.Token))
             {
                 _httpClient.DefaultRequestHeaders.Authorization =
@@ -64,7 +63,7 @@ namespace AttendanceSeekers_client
             if (response.StatusCode == HttpStatusCode.OK)
             {
                 string json = await response.Content.ReadAsStringAsync();
-                return JsonConvert.DeserializeObject<List<SelectTeacherDTO>>(json);
+                return JsonConvert.DeserializeObject<List<ParentResponseDto>>(json);
             }
             else
             {
@@ -72,10 +71,10 @@ namespace AttendanceSeekers_client
             }
 
         }
-        private async Task<SelectTeacherDTO> FetchDataFromAPIUsingId(string id)
+        private async Task<ParentResponseDto> FetchDataFromAPIUsingId(string id)
         {
 
-            string ApiURL = $"api/Teacher/{id}";
+            string ApiURL = $"api/Parent/{id}";
             if (!string.IsNullOrWhiteSpace(GlobalConfig.Instance.Token))
             {
                 _httpClient.DefaultRequestHeaders.Authorization =
@@ -85,7 +84,7 @@ namespace AttendanceSeekers_client
             if (response.StatusCode == HttpStatusCode.OK)
             {
                 string json = await response.Content.ReadAsStringAsync();
-                return JsonConvert.DeserializeObject<SelectTeacherDTO>(json);
+                return JsonConvert.DeserializeObject<ParentResponseDto>(json);
             }
             else
             {
@@ -97,9 +96,9 @@ namespace AttendanceSeekers_client
         private async void btnAdd_Click(object sender, EventArgs e)
         {
           
-            TeacherModule teacherModule = new TeacherModule();
-            teacherModule.ShowDialog();
-            LoadTeachersAsync();
+            ParentModule ParentModule = new ParentModule();
+            ParentModule.ShowDialog();
+            LoadParentsAsync();
 
         }
 
@@ -113,15 +112,15 @@ namespace AttendanceSeekers_client
                 try
                 {
                     // Get the ID from the corresponding cell
-                    string id = Convert.ToString(dgvClass.Rows[e.RowIndex].Cells["Id"].Value);
+                    string id = Convert.ToString(dgvParent.Rows[e.RowIndex].Cells["Id"].Value);
 
                     // Fetch the class data using the ID
-                    var teacherDTO = await FetchDataFromAPIUsingId(id);
+                    var ParentDTO = await FetchDataFromAPIUsingId(id);
 
                     // Pass the fetched data to the ClassModule form
-                    TeacherModule teacherModule = new TeacherModule(teacherDTO);
-                    teacherModule.ShowDialog(); // Open the form as a modal dialog
-                    LoadTeachersAsync();
+                    ParentModule ParentModule = new ParentModule(ParentDTO);
+                    ParentModule.ShowDialog(); // Open the form as a modal dialog
+                    LoadParentsAsync();
 
                 }
                 catch (Exception ex)

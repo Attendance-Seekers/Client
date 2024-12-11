@@ -1,6 +1,6 @@
 ﻿namespace AttendanceSeekers_client
 {
-    partial class AllTeachers
+    partial class AllParents
     {
         /// <summary>
         /// Required designer variable.
@@ -28,84 +28,84 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AllTeachers));
-            dgvClass = new Bunifu.UI.WinForms.BunifuDataGridView();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AllParents));
+            dgvParent = new Bunifu.UI.WinForms.BunifuDataGridView();
             panel1 = new Panel();
             btnAdd = new Button();
             txtSearch = new TextBox();
             label1 = new Label();
-            ((System.ComponentModel.ISupportInitialize)dgvClass).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvParent).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
-            // dgvClass
+            // dgvParent
             // 
-            dgvClass.AllowCustomTheming = false;
-            dgvClass.AllowUserToAddRows = false;
-            dgvClass.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(248, 251, 255);
-            dataGridViewCellStyle1.ForeColor = Color.Black;
-            dgvClass.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dgvClass.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dgvClass.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvClass.BackgroundColor = SystemColors.Control;
-            dgvClass.BorderStyle = BorderStyle.None;
-            dgvClass.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dgvClass.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.DodgerBlue;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI Semibold", 11.75F, FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(24, 115, 204);
-            dataGridViewCellStyle2.SelectionForeColor = Color.White;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgvClass.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dgvClass.ColumnHeadersHeight = 40;
-            dgvClass.CurrentTheme.AlternatingRowsStyle.BackColor = Color.FromArgb(248, 251, 255);
-            dgvClass.CurrentTheme.AlternatingRowsStyle.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
-            dgvClass.CurrentTheme.AlternatingRowsStyle.ForeColor = Color.Black;
-            dgvClass.CurrentTheme.AlternatingRowsStyle.SelectionBackColor = Color.FromArgb(210, 232, 255);
-            dgvClass.CurrentTheme.AlternatingRowsStyle.SelectionForeColor = Color.Black;
-            dgvClass.CurrentTheme.BackColor = Color.White;
-            dgvClass.CurrentTheme.GridColor = Color.FromArgb(221, 238, 255);
-            dgvClass.CurrentTheme.HeaderStyle.BackColor = Color.DodgerBlue;
-            dgvClass.CurrentTheme.HeaderStyle.Font = new Font("Segoe UI Semibold", 11.75F, FontStyle.Bold);
-            dgvClass.CurrentTheme.HeaderStyle.ForeColor = Color.White;
-            dgvClass.CurrentTheme.HeaderStyle.SelectionBackColor = Color.FromArgb(24, 115, 204);
-            dgvClass.CurrentTheme.HeaderStyle.SelectionForeColor = Color.White;
-            dgvClass.CurrentTheme.Name = null;
-            dgvClass.CurrentTheme.RowsStyle.BackColor = Color.White;
-            dgvClass.CurrentTheme.RowsStyle.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
-            dgvClass.CurrentTheme.RowsStyle.ForeColor = Color.Black;
-            dgvClass.CurrentTheme.RowsStyle.SelectionBackColor = Color.FromArgb(210, 232, 255);
-            dgvClass.CurrentTheme.RowsStyle.SelectionForeColor = Color.Black;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.White;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
-            dataGridViewCellStyle3.ForeColor = Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(210, 232, 255);
-            dataGridViewCellStyle3.SelectionForeColor = Color.Black;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            dgvClass.DefaultCellStyle = dataGridViewCellStyle3;
-            dgvClass.EnableHeadersVisualStyles = false;
-            dgvClass.GridColor = Color.FromArgb(221, 238, 255);
-            dgvClass.HeaderBackColor = Color.DodgerBlue;
-            dgvClass.HeaderBgColor = Color.Empty;
-            dgvClass.HeaderForeColor = Color.White;
-            dgvClass.Location = new Point(0, 0);
-            dgvClass.Name = "dgvClass";
-            dgvClass.ReadOnly = true;
-            dgvClass.RowHeadersVisible = false;
-            dgvClass.RowHeadersWidth = 51;
-            dgvClass.RowTemplate.Height = 40;
-            dgvClass.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvClass.Size = new Size(984, 487);
-            dgvClass.TabIndex = 1;
-            dgvClass.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
-            dgvClass.CellMouseDoubleClick += dgvClass_CellMouseDoubleClick;
+            dgvParent.AllowCustomTheming = false;
+            dgvParent.AllowUserToAddRows = false;
+            dgvParent.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(248, 251, 255);
+            dataGridViewCellStyle4.ForeColor = Color.Black;
+            dgvParent.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dgvParent.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dgvParent.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvParent.BackgroundColor = SystemColors.Control;
+            dgvParent.BorderStyle = BorderStyle.None;
+            dgvParent.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvParent.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.DodgerBlue;
+            dataGridViewCellStyle5.Font = new Font("Segoe UI Semibold", 11.75F, FontStyle.Bold);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(24, 115, 204);
+            dataGridViewCellStyle5.SelectionForeColor = Color.White;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            dgvParent.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dgvParent.ColumnHeadersHeight = 40;
+            dgvParent.CurrentTheme.AlternatingRowsStyle.BackColor = Color.FromArgb(248, 251, 255);
+            dgvParent.CurrentTheme.AlternatingRowsStyle.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
+            dgvParent.CurrentTheme.AlternatingRowsStyle.ForeColor = Color.Black;
+            dgvParent.CurrentTheme.AlternatingRowsStyle.SelectionBackColor = Color.FromArgb(210, 232, 255);
+            dgvParent.CurrentTheme.AlternatingRowsStyle.SelectionForeColor = Color.Black;
+            dgvParent.CurrentTheme.BackColor = Color.White;
+            dgvParent.CurrentTheme.GridColor = Color.FromArgb(221, 238, 255);
+            dgvParent.CurrentTheme.HeaderStyle.BackColor = Color.DodgerBlue;
+            dgvParent.CurrentTheme.HeaderStyle.Font = new Font("Segoe UI Semibold", 11.75F, FontStyle.Bold);
+            dgvParent.CurrentTheme.HeaderStyle.ForeColor = Color.White;
+            dgvParent.CurrentTheme.HeaderStyle.SelectionBackColor = Color.FromArgb(24, 115, 204);
+            dgvParent.CurrentTheme.HeaderStyle.SelectionForeColor = Color.White;
+            dgvParent.CurrentTheme.Name = null;
+            dgvParent.CurrentTheme.RowsStyle.BackColor = Color.White;
+            dgvParent.CurrentTheme.RowsStyle.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
+            dgvParent.CurrentTheme.RowsStyle.ForeColor = Color.Black;
+            dgvParent.CurrentTheme.RowsStyle.SelectionBackColor = Color.FromArgb(210, 232, 255);
+            dgvParent.CurrentTheme.RowsStyle.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.White;
+            dataGridViewCellStyle6.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
+            dataGridViewCellStyle6.ForeColor = Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(210, 232, 255);
+            dataGridViewCellStyle6.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            dgvParent.DefaultCellStyle = dataGridViewCellStyle6;
+            dgvParent.EnableHeadersVisualStyles = false;
+            dgvParent.GridColor = Color.FromArgb(221, 238, 255);
+            dgvParent.HeaderBackColor = Color.DodgerBlue;
+            dgvParent.HeaderBgColor = Color.Empty;
+            dgvParent.HeaderForeColor = Color.White;
+            dgvParent.Location = new Point(0, 0);
+            dgvParent.Name = "dgvParent";
+            dgvParent.ReadOnly = true;
+            dgvParent.RowHeadersVisible = false;
+            dgvParent.RowHeadersWidth = 51;
+            dgvParent.RowTemplate.Height = 40;
+            dgvParent.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvParent.Size = new Size(984, 487);
+            dgvParent.TabIndex = 1;
+            dgvParent.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
+            dgvParent.CellMouseDoubleClick += dgvClass_CellMouseDoubleClick;
             // 
             // panel1
             // 
@@ -155,21 +155,21 @@
             label1.Name = "label1";
             label1.Size = new Size(230, 71);
             label1.TabIndex = 3;
-            label1.Text = "Manage Teacher";
+            label1.Text = "Manage Parent";
             label1.TextAlign = ContentAlignment.MiddleRight;
             // 
-            // AllTeachers
+            // AllParents
             // 
             AutoScaleDimensions = new SizeF(11F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(984, 561);
             Controls.Add(panel1);
-            Controls.Add(dgvClass);
+            Controls.Add(dgvParent);
             Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Margin = new Padding(4);
-            Name = "AllTeachers";
-            Text = "AllTeachers";
-            ((System.ComponentModel.ISupportInitialize)dgvClass).EndInit();
+            Name = "AllParents";
+            Text = "AllParents";
+            ((System.ComponentModel.ISupportInitialize)dgvParent).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -177,7 +177,7 @@
 
         #endregion
 
-        private Bunifu.UI.WinForms.BunifuDataGridView dgvClass;
+        private Bunifu.UI.WinForms.BunifuDataGridView dgvParent;
         private Panel panel1;
         private TextBox txtSearch;
         private Label label1;
