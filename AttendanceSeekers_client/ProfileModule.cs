@@ -110,7 +110,7 @@ namespace AttendanceSeekers_client
                 subjIDval.Visible = false;
                 textAddress.Enabled = false;
                 textEmail.Text = adminDTO.email;
-                textPhone.Text =adminDTO.phonenumber;
+                textPhone.Text = adminDTO.phonenumber;
 
                 textName.Enabled = false;
                 age.Enabled = false;
@@ -121,7 +121,7 @@ namespace AttendanceSeekers_client
                 subjIdlbl.Visible = false;
                 subjIDval.Visible = false;
                 textAddress.Text = parentDTO.Address;
-                textPhone.Enabled= false;
+                textPhone.Enabled = false;
 
                 textEmail.Text = parentDTO.Email;
                 textName.Text = parentDTO.Fullname;
@@ -142,7 +142,7 @@ namespace AttendanceSeekers_client
             age.Value = 1;
             subjIDval.Value = 1;
             textUsername.Clear();
-            
+
             this.Dispose();
 
         }
@@ -159,7 +159,7 @@ namespace AttendanceSeekers_client
         }
 
 
-       
+
         private async Task<HttpStatusCode> UpdateDataAPI<T>(T updateDto, string apiUrl)
         {
             try
@@ -206,7 +206,7 @@ namespace AttendanceSeekers_client
                     Teacher_fullName = textName.Text,
                     age = (int)age.Value,
                     SubjectId = (int)subjIDval.Value,
-                    
+
                     Id = EditId
                 };
 
@@ -252,7 +252,10 @@ namespace AttendanceSeekers_client
             }
         }
 
-
-
+        private void btnChangePass_Click(object sender, EventArgs e)
+        {
+            changePassModule changePassModule = new changePassModule();
+            changePassModule.ShowDialog();
         }
+    }
 }

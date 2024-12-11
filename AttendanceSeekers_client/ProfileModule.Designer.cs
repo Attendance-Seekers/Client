@@ -267,6 +267,7 @@
             btnChangePass.TabIndex = 40;
             btnChangePass.Text = "Change Password";
             btnChangePass.UseVisualStyleBackColor = false;
+            btnChangePass.Click += btnChangePass_Click;
             // 
             // ProfileModule
             // 
