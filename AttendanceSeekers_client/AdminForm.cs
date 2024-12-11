@@ -15,6 +15,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.WebRequestMethods;
 
 namespace AttendanceSeekers_client
 {
@@ -50,7 +51,13 @@ namespace AttendanceSeekers_client
         {
             
                 string ApiURL = "api/Student";
-                HttpResponseMessage response = await _httpClient.GetAsync(ApiURL);
+            // Add the Bearer token to the headers if available
+            if (!string.IsNullOrWhiteSpace(GlobalConfig.Instance.Token))
+            {
+                _httpClient.DefaultRequestHeaders.Authorization =
+                    new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", GlobalConfig.Instance.Token);
+            }
+            HttpResponseMessage response = await _httpClient.GetAsync(ApiURL);
                 if (response.StatusCode == HttpStatusCode.OK)
                 {
                     string json = await response.Content.ReadAsStringAsync();
@@ -66,7 +73,13 @@ namespace AttendanceSeekers_client
         {
             
                 string ApiURL = "api/Department";
-                HttpResponseMessage response = await _httpClient.GetAsync(ApiURL);
+            // Add the Bearer token to the headers if available
+            if (!string.IsNullOrWhiteSpace(GlobalConfig.Instance.Token))
+            {
+                _httpClient.DefaultRequestHeaders.Authorization =
+                    new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", GlobalConfig.Instance.Token);
+            }
+            HttpResponseMessage response = await _httpClient.GetAsync(ApiURL);
                 if (response.StatusCode == HttpStatusCode.OK)
                 {
                     string json = await response.Content.ReadAsStringAsync();
@@ -82,7 +95,13 @@ namespace AttendanceSeekers_client
         {
             
                 string ApiURL = "api/classes";
-                HttpResponseMessage response = await _httpClient.GetAsync(ApiURL);
+            // Add the Bearer token to the headers if available
+            if (!string.IsNullOrWhiteSpace(GlobalConfig.Instance.Token))
+            {
+                _httpClient.DefaultRequestHeaders.Authorization =
+                    new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", GlobalConfig.Instance.Token);
+            }
+            HttpResponseMessage response = await _httpClient.GetAsync(ApiURL);
                 if (response.StatusCode == HttpStatusCode.OK)
                 {
                     string json = await response.Content.ReadAsStringAsync();
@@ -98,7 +117,13 @@ namespace AttendanceSeekers_client
         {
             
                 string ApiURL = "api/Student";
-                HttpResponseMessage response = await _httpClient.GetAsync(ApiURL);
+            // Add the Bearer token to the headers if available
+            if (!string.IsNullOrWhiteSpace(GlobalConfig.Instance.Token))
+            {
+                _httpClient.DefaultRequestHeaders.Authorization =
+                    new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", GlobalConfig.Instance.Token);
+            }
+            HttpResponseMessage response = await _httpClient.GetAsync(ApiURL);
                 if (response.StatusCode == HttpStatusCode.OK)
                 {
                     string json = await response.Content.ReadAsStringAsync();
@@ -110,14 +135,6 @@ namespace AttendanceSeekers_client
                 }
             
         }
-        private void lblStudentAbsent_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bunifuLabel3_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

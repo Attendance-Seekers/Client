@@ -1,6 +1,4 @@
-﻿using Attendance_Student.Models;
-
-namespace Attendance_Student.DTOs.ClassDTO
+﻿namespace Attendance_Student.DTOs.ClassDTO
 {
     public class AddClassDTO
     {

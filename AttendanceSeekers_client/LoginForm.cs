@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,6 +9,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace AttendanceSeekers_client
 {
@@ -23,7 +25,7 @@ namespace AttendanceSeekers_client
 
         }
 
-       
+
         private void Login_button_Click(object sender, EventArgs e)
         {
             var username = userTextBox.Text;
@@ -37,7 +39,7 @@ namespace AttendanceSeekers_client
             };
 
             // Convert the login data to JSON
-            string jsonData = JsonSerializer.Serialize(loginData);
+            string jsonData = System.Text.Json.JsonSerializer.Serialize(loginData);
             var content = new StringContent(jsonData, Encoding.UTF8, "application/json");
             try
             {
@@ -48,21 +50,28 @@ namespace AttendanceSeekers_client
                 {
                     // Get the token from the response
                     string responseBody = response.Content.ReadAsStringAsync().Result;
-                    var responseData = JsonSerializer.Deserialize<JwtResponse>(responseBody);
+                    var responseData = JsonConvert.DeserializeObject<JwtResponse>(responseBody);
+                    //JsonSerializer.Deserialize<JwtResponse>(responseBody);
 
                     string getRole = GlobalConfig.Instance.role;
                     if (responseData.roles.Contains(getRole))
                     {
                         GlobalConfig.Instance.Token = responseData.Token;
+                        GlobalConfig.Instance.username = responseData.Username;
+
                         // Display the token in a textbox or use it as needed
                         MessageBox.Show($"Token is {GlobalConfig.Instance.Token}", "TOKEN", MessageBoxButtons.OK);
+                        MainForm main = new MainForm();
+                        this.Hide();
+                        main.ShowDialog();
+                        this.Close();
                     }
                     else
                     {
                         MessageBox.Show($"Make sure to login with your '{getRole}' account.", "Role Check", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
-                
+
 
                 else
                 {
@@ -76,10 +85,7 @@ namespace AttendanceSeekers_client
                 MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            welcomeForm welcomeForm = new welcomeForm();
-            this.Hide();
-            welcomeForm.ShowDialog();
-            this.Close();
+
 
 
 
@@ -100,7 +106,7 @@ namespace AttendanceSeekers_client
             public List<string> roles { get; set; }
         }
 
-        
+
         private void passTextBox_Enter_1(object sender, EventArgs e)
         {
             passTextBox.Clear();
@@ -111,6 +117,26 @@ namespace AttendanceSeekers_client
         {
             userTextBox.Clear();
             userTextBox.ForeColor = Color.Black;
+        }
+
+        private void userTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+               passTextBox.Focus();
+                // Suppress the 'ding' sound when Enter is pressed
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void passTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Login_button_Click( sender,  e);
+                // Suppress the 'ding' sound when Enter is pressed
+                e.SuppressKeyPress = true;
+            }
         }
     }
 }

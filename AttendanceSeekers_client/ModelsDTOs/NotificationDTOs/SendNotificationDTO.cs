@@ -1,7 +1,5 @@
-﻿using Attendance_Student.Models;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using Attendance_Student.DTOs.StudentDTO;
 using System.ComponentModel.DataAnnotations;
-using Attendance_Student.DTOs.StudentDTO;
 
 namespace Attendance_Student.DTOs.NotificationDTOs
 {

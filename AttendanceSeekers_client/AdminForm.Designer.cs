@@ -322,7 +322,7 @@
             totalClassLabel.Text = "128";
             totalClassLabel.TextAlignment = ContentAlignment.TopLeft;
             totalClassLabel.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            totalClassLabel.Click += bunifuLabel3_Click;
+            
             // 
             // lblClass
             // 
@@ -551,7 +551,7 @@
             lblStudentAbsent.Text = "Top 5 Absent Students";
             lblStudentAbsent.TextAlignment = ContentAlignment.TopLeft;
             lblStudentAbsent.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            lblStudentAbsent.Click += lblStudentAbsent_Click;
+           
             // 
             // bunifuGradientPanel4
             // 

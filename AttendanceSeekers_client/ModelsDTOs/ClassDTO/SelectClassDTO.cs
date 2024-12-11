@@ -1,7 +1,5 @@
 ﻿using Attendance_Student.DTOs.StudentDTO;
 using Attendance_Student.DTOs.TimeTableDTO;
-using Attendance_Student.Models;
-using System.ComponentModel.DataAnnotations;
 
 namespace Attendance_Student.DTOs.ClassDTO
 {

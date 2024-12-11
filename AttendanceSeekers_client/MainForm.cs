@@ -1,14 +1,17 @@
 using System.Data.SqlClient;
+using System.Net;
 namespace AttendanceSeekers_client
 {
     public partial class MainForm : Form
     {
-        HttpClient _httpClient;
+        HttpClient _httpClient = GlobalConfig.Instance.HttpClient;
         public MainForm()
         {
             InitializeComponent();
             customizeDesing();
-            _httpClient = new HttpClient();
+            lblRole.Text = GlobalConfig.Instance.role;
+            lblUsername.Text = GlobalConfig.Instance.username;
+            //_httpClient = new HttpClient();
         }
         #region panelSlide
         private void customizeDesing()
@@ -38,9 +41,9 @@ namespace AttendanceSeekers_client
             {
                 panelSubDepartment.Visible = false;
             }
-            if(SubParent.Visible = true)
+            if (SubParent.Visible = true)
             {
-                SubParent.Visible = false;  
+                SubParent.Visible = false;
             }
         }
         private void showSubmenu(Panel submenu)
@@ -114,6 +117,77 @@ namespace AttendanceSeekers_client
         {
             showSubmenu(SubParent);
 
+        }
+
+        private void btnClassList_Click(object sender, EventArgs e)
+        {
+            AllClasses allClasses = new AllClasses();
+            allClasses.ShowDialog();
+        }
+
+        private void btnTeacherList_Click(object sender, EventArgs e)
+        {
+            AllTeachers allteacher = new AllTeachers();
+            allteacher.ShowDialog();
+        }
+
+        private void btnSubjectsList_Click(object sender, EventArgs e)
+        {
+            AllSubjcets allSubjcets = new AllSubjcets();    
+            allSubjcets.ShowDialog();
+        }
+
+        private void btnDepartmentList_Click(object sender, EventArgs e)
+        {
+            AllDepartments allDepartments = new AllDepartments();
+            allDepartments.ShowDialog();
+        }
+
+        private void btnParentList_Click(object sender, EventArgs e)
+        {
+             AllParents allParents = new AllParents();
+            allParents.ShowDialog();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            LogoutClientAsync();
+            welcomeForm welcome = new welcomeForm();
+            this.Hide();
+            welcome.ShowDialog();
+            this.Close();    
+        }
+
+        private async Task LogoutClientAsync()
+        {
+            string apiURL = "api/Account/logout";
+
+            // Set the Authorization header if a token exists
+            if (!string.IsNullOrWhiteSpace(GlobalConfig.Instance.Token))
+            {
+                _httpClient.DefaultRequestHeaders.Authorization =
+                    new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", GlobalConfig.Instance.Token);
+            }
+
+            try
+            {
+                // Call the API's logout endpoint
+                HttpResponseMessage response = await _httpClient.PostAsync(apiURL, null); // POST with no content
+
+                if (response.StatusCode == HttpStatusCode.OK)
+                {
+                    MessageBox.Show("You have successfully logged out.", "Logout", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    GlobalConfig.Instance.Token = null; // Clear the token after logout
+                }
+                else
+                {
+                    MessageBox.Show($"Failed to log out. Status code: {response.StatusCode}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while logging out: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         //private void btnStockEntry_Click(object sender, EventArgs e)

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!--
-    Microsoft ResX Schema 
+    Microsoft ResX Schema
 
     Version 2.0
 
@@ -48,7 +48,7 @@
     value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
-    
+
     mimetype: application/x-microsoft.net.object.soap.base64
     value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
@@ -117,19 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="admin_button.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="admin_button.Font" type="System.Drawing.Font, System.Drawing">
     <value>Showcard Gothic, 22.2pt, style=Bold</value>
   </data>
   <data name="admin_button.Location" type="System.Drawing.Point, System.Drawing">
-    <value>41, 430</value>
+    <value>51, 538</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="admin_button.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
   <data name="admin_button.Size" type="System.Drawing.Size, System.Drawing">
-    <value>221, 74</value>
+    <value>276, 92</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="admin_button.TabIndex" type="System.Int32, mscorlib">
@@ -150,17 +154,20 @@
   <data name="&gt;&gt;admin_button.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="teacher_button.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
   <data name="teacher_button.Font" type="System.Drawing.Font, System.Drawing">
     <value>Showcard Gothic, 22.2pt, style=Bold</value>
   </data>
   <data name="teacher_button.Location" type="System.Drawing.Point, System.Drawing">
-    <value>297, 430</value>
+    <value>371, 538</value>
   </data>
   <data name="teacher_button.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
   <data name="teacher_button.Size" type="System.Drawing.Size, System.Drawing">
-    <value>221, 74</value>
+    <value>276, 92</value>
   </data>
   <data name="teacher_button.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -180,17 +187,20 @@
   <data name="&gt;&gt;teacher_button.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="parent_button.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
   <data name="parent_button.Font" type="System.Drawing.Font, System.Drawing">
     <value>Showcard Gothic, 22.2pt, style=Bold</value>
   </data>
   <data name="parent_button.Location" type="System.Drawing.Point, System.Drawing">
-    <value>552, 430</value>
+    <value>690, 538</value>
   </data>
   <data name="parent_button.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
   <data name="parent_button.Size" type="System.Drawing.Size, System.Drawing">
-    <value>221, 74</value>
+    <value>276, 92</value>
   </data>
   <data name="parent_button.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -210,17 +220,20 @@
   <data name="&gt;&gt;parent_button.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="student_button.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
   <data name="student_button.Font" type="System.Drawing.Font, System.Drawing">
     <value>Showcard Gothic, 22.2pt, style=Bold</value>
   </data>
   <data name="student_button.Location" type="System.Drawing.Point, System.Drawing">
-    <value>816, 430</value>
+    <value>1020, 538</value>
   </data>
   <data name="student_button.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
   <data name="student_button.Size" type="System.Drawing.Size, System.Drawing">
-    <value>221, 74</value>
+    <value>276, 92</value>
   </data>
   <data name="student_button.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -240,20 +253,20 @@
   <data name="&gt;&gt;student_button.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="label1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top</value>
   </data>
   <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Showcard Gothic, 36pt, style=Bold</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>90, 110</value>
+    <value>112, 138</value>
   </data>
   <data name="label1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>844, 180</value>
+    <value>1032, 222</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -280,14 +293,13 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>96, 96</value>
+    <value>120, 120</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="$this.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1063, 577</value>
+    <value>1329, 721</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>

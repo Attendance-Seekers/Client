@@ -69,7 +69,7 @@
             panelTitle.Dock = DockStyle.Top;
             panelTitle.Location = new Point(228, 0);
             panelTitle.Name = "panelTitle";
-            panelTitle.Size = new Size(956, 40);
+            panelTitle.Size = new Size(1035, 40);
             panelTitle.TabIndex = 1;
             // 
             // lblTitle
@@ -85,6 +85,8 @@
             // 
             // panelMain
             // 
+            panelMain.AllowDrop = true;
+            panelMain.AutoSize = true;
             panelMain.BackColor = Color.White;
             panelMain.Dock = DockStyle.Fill;
             panelMain.Font = new Font("Simplified Arabic Fixed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -92,7 +94,7 @@
             panelMain.Name = "panelMain";
             panelMain.Padding = new Padding(0, 40, 0, 0);
             panelMain.RightToLeft = RightToLeft.No;
-            panelMain.Size = new Size(956, 661);
+            panelMain.Size = new Size(1035, 817);
             panelMain.TabIndex = 2;
             // 
             // panelSlide
@@ -114,7 +116,7 @@
             panelSlide.Dock = DockStyle.Left;
             panelSlide.Location = new Point(0, 0);
             panelSlide.Name = "panelSlide";
-            panelSlide.Size = new Size(228, 661);
+            panelSlide.Size = new Size(228, 817);
             panelSlide.TabIndex = 3;
             // 
             // SubParent
@@ -124,7 +126,7 @@
             SubParent.Dock = DockStyle.Top;
             SubParent.Location = new Point(0, 572);
             SubParent.Name = "SubParent";
-            SubParent.Size = new Size(211, 54);
+            SubParent.Size = new Size(228, 54);
             SubParent.TabIndex = 12;
             SubParent.Click += SubParent_Click;
             // 
@@ -137,11 +139,12 @@
             btnParentList.Location = new Point(0, 0);
             btnParentList.Name = "btnParentList";
             btnParentList.Padding = new Padding(35, 0, 0, 0);
-            btnParentList.Size = new Size(211, 45);
+            btnParentList.Size = new Size(228, 45);
             btnParentList.TabIndex = 4;
             btnParentList.Text = "All Parent";
             btnParentList.TextAlign = ContentAlignment.MiddleLeft;
             btnParentList.UseVisualStyleBackColor = true;
+            btnParentList.Click += btnParentList_Click;
             // 
             // btnParent
             // 
@@ -152,7 +155,7 @@
             btnParent.Location = new Point(0, 527);
             btnParent.Name = "btnParent";
             btnParent.Padding = new Padding(5, 0, 0, 0);
-            btnParent.Size = new Size(211, 45);
+            btnParent.Size = new Size(228, 45);
             btnParent.TabIndex = 11;
             btnParent.Text = "Parent";
             btnParent.TextAlign = ContentAlignment.MiddleLeft;
@@ -165,14 +168,15 @@
             btnLogout.FlatAppearance.BorderSize = 0;
             btnLogout.FlatStyle = FlatStyle.Flat;
             btnLogout.ForeColor = SystemColors.Control;
-            btnLogout.Location = new Point(0, 626);
+            btnLogout.Location = new Point(0, 772);
             btnLogout.Name = "btnLogout";
             btnLogout.Padding = new Padding(5, 0, 0, 0);
-            btnLogout.Size = new Size(211, 45);
+            btnLogout.Size = new Size(228, 45);
             btnLogout.TabIndex = 10;
             btnLogout.Text = "Logout";
             btnLogout.TextAlign = ContentAlignment.MiddleLeft;
             btnLogout.UseVisualStyleBackColor = true;
+            btnLogout.Click += btnLogout_Click;
             // 
             // panelSubDepartment
             // 
@@ -181,7 +185,7 @@
             panelSubDepartment.Dock = DockStyle.Top;
             panelSubDepartment.Location = new Point(0, 478);
             panelSubDepartment.Name = "panelSubDepartment";
-            panelSubDepartment.Size = new Size(211, 49);
+            panelSubDepartment.Size = new Size(228, 49);
             panelSubDepartment.TabIndex = 9;
             panelSubDepartment.Click += panelSubDepartment_Click;
             // 
@@ -194,11 +198,12 @@
             btnDepartmentList.Location = new Point(0, 0);
             btnDepartmentList.Name = "btnDepartmentList";
             btnDepartmentList.Padding = new Padding(35, 0, 0, 0);
-            btnDepartmentList.Size = new Size(211, 45);
+            btnDepartmentList.Size = new Size(228, 45);
             btnDepartmentList.TabIndex = 4;
             btnDepartmentList.Text = "All Department";
             btnDepartmentList.TextAlign = ContentAlignment.MiddleLeft;
             btnDepartmentList.UseVisualStyleBackColor = true;
+            btnDepartmentList.Click += btnDepartmentList_Click;
             // 
             // btnDepartment
             // 
@@ -209,7 +214,7 @@
             btnDepartment.Location = new Point(0, 433);
             btnDepartment.Name = "btnDepartment";
             btnDepartment.Padding = new Padding(5, 0, 0, 0);
-            btnDepartment.Size = new Size(211, 45);
+            btnDepartment.Size = new Size(228, 45);
             btnDepartment.TabIndex = 8;
             btnDepartment.Text = "Department";
             btnDepartment.TextAlign = ContentAlignment.MiddleLeft;
@@ -224,7 +229,7 @@
             panelSubSubject.Dock = DockStyle.Top;
             panelSubSubject.Location = new Point(0, 383);
             panelSubSubject.Name = "panelSubSubject";
-            panelSubSubject.Size = new Size(211, 50);
+            panelSubSubject.Size = new Size(228, 50);
             panelSubSubject.TabIndex = 7;
             panelSubSubject.DoubleClick += panelSubSubject_DoubleClick;
             // 
@@ -237,11 +242,12 @@
             btnSubjectsList.Location = new Point(0, 0);
             btnSubjectsList.Name = "btnSubjectsList";
             btnSubjectsList.Padding = new Padding(35, 0, 0, 0);
-            btnSubjectsList.Size = new Size(211, 45);
+            btnSubjectsList.Size = new Size(228, 45);
             btnSubjectsList.TabIndex = 4;
             btnSubjectsList.Text = "All Subjects";
             btnSubjectsList.TextAlign = ContentAlignment.MiddleLeft;
             btnSubjectsList.UseVisualStyleBackColor = true;
+            btnSubjectsList.Click += btnSubjectsList_Click;
             // 
             // btnSubject
             // 
@@ -252,7 +258,7 @@
             btnSubject.Location = new Point(0, 338);
             btnSubject.Name = "btnSubject";
             btnSubject.Padding = new Padding(5, 0, 0, 0);
-            btnSubject.Size = new Size(211, 45);
+            btnSubject.Size = new Size(228, 45);
             btnSubject.TabIndex = 5;
             btnSubject.Text = "Subject";
             btnSubject.TextAlign = ContentAlignment.MiddleLeft;
@@ -266,7 +272,7 @@
             panelSubTeacher.Dock = DockStyle.Top;
             panelSubTeacher.Location = new Point(0, 293);
             panelSubTeacher.Name = "panelSubTeacher";
-            panelSubTeacher.Size = new Size(211, 45);
+            panelSubTeacher.Size = new Size(228, 45);
             panelSubTeacher.TabIndex = 4;
             // 
             // btnTeacherList
@@ -278,11 +284,12 @@
             btnTeacherList.Location = new Point(0, 0);
             btnTeacherList.Name = "btnTeacherList";
             btnTeacherList.Padding = new Padding(35, 0, 0, 0);
-            btnTeacherList.Size = new Size(211, 45);
+            btnTeacherList.Size = new Size(228, 45);
             btnTeacherList.TabIndex = 4;
             btnTeacherList.Text = "All Teachers";
             btnTeacherList.TextAlign = ContentAlignment.MiddleLeft;
             btnTeacherList.UseVisualStyleBackColor = true;
+            btnTeacherList.Click += btnTeacherList_Click;
             // 
             // btnTeacher
             // 
@@ -293,7 +300,7 @@
             btnTeacher.Location = new Point(0, 248);
             btnTeacher.Name = "btnTeacher";
             btnTeacher.Padding = new Padding(5, 0, 0, 0);
-            btnTeacher.Size = new Size(211, 45);
+            btnTeacher.Size = new Size(228, 45);
             btnTeacher.TabIndex = 3;
             btnTeacher.Text = "Teacher";
             btnTeacher.TextAlign = ContentAlignment.MiddleLeft;
@@ -307,7 +314,7 @@
             panelSubClass.Dock = DockStyle.Top;
             panelSubClass.Location = new Point(0, 203);
             panelSubClass.Name = "panelSubClass";
-            panelSubClass.Size = new Size(211, 45);
+            panelSubClass.Size = new Size(228, 45);
             panelSubClass.TabIndex = 0;
             // 
             // btnClassList
@@ -319,11 +326,12 @@
             btnClassList.Location = new Point(0, 0);
             btnClassList.Name = "btnClassList";
             btnClassList.Padding = new Padding(35, 0, 0, 0);
-            btnClassList.Size = new Size(211, 45);
+            btnClassList.Size = new Size(228, 45);
             btnClassList.TabIndex = 3;
             btnClassList.Text = "All Classes";
             btnClassList.TextAlign = ContentAlignment.MiddleLeft;
             btnClassList.UseVisualStyleBackColor = true;
+            btnClassList.Click += btnClassList_Click;
             // 
             // btnClass
             // 
@@ -334,7 +342,7 @@
             btnClass.Location = new Point(0, 158);
             btnClass.Name = "btnClass";
             btnClass.Padding = new Padding(5, 0, 0, 0);
-            btnClass.Size = new Size(211, 45);
+            btnClass.Size = new Size(228, 45);
             btnClass.TabIndex = 2;
             btnClass.Text = "Class";
             btnClass.TextAlign = ContentAlignment.MiddleLeft;
@@ -350,7 +358,7 @@
             btnProfile.Location = new Point(0, 113);
             btnProfile.Name = "btnProfile";
             btnProfile.Padding = new Padding(5, 0, 0, 0);
-            btnProfile.Size = new Size(211, 45);
+            btnProfile.Size = new Size(228, 45);
             btnProfile.TabIndex = 0;
             btnProfile.Text = "Profile";
             btnProfile.TextAlign = ContentAlignment.MiddleLeft;
@@ -364,7 +372,7 @@
             panelLogo.Dock = DockStyle.Top;
             panelLogo.Location = new Point(0, 0);
             panelLogo.Name = "panelLogo";
-            panelLogo.Size = new Size(211, 113);
+            panelLogo.Size = new Size(228, 113);
             panelLogo.TabIndex = 1;
             // 
             // label1
@@ -373,7 +381,7 @@
             label1.ForeColor = SystemColors.ControlLight;
             label1.Location = new Point(10, 114);
             label1.Name = "label1";
-            label1.Size = new Size(28, 21);
+            label1.Size = new Size(34, 25);
             label1.TabIndex = 1;
             label1.Text = "LN";
             label1.Visible = false;
@@ -384,7 +392,7 @@
             lblUsername.ForeColor = SystemColors.ControlLight;
             lblUsername.Location = new Point(61, 48);
             lblUsername.Name = "lblUsername";
-            lblUsername.Size = new Size(82, 21);
+            lblUsername.Size = new Size(100, 25);
             lblUsername.TabIndex = 0;
             lblUsername.Text = "UserName";
             // 
@@ -394,23 +402,20 @@
             lblRole.ForeColor = SystemColors.ControlLight;
             lblRole.Location = new Point(76, 89);
             lblRole.Name = "lblRole";
-            lblRole.Size = new Size(46, 21);
+            lblRole.Size = new Size(56, 25);
             lblRole.TabIndex = 0;
             lblRole.Text = "Role";
             // 
             // MainForm
             // 
-            AllowDrop = true;
-            AutoScaleDimensions = new SizeF(9F, 21F);
+            AutoScaleDimensions = new SizeF(11F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            AutoScroll = true;
             BackColor = Color.FromArgb(0, 70, 160);
-            ClientSize = new Size(1184, 661);
+            ClientSize = new Size(1263, 817);
             Controls.Add(panelTitle);
             Controls.Add(panelMain);
             Controls.Add(panelSlide);
             Font = new Font("Simplified Arabic Fixed", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            FormBorderStyle = FormBorderStyle.FixedSingle;
             Margin = new Padding(4);
             MinimumSize = new Size(1200, 700);
             Name = "MainForm";
@@ -425,6 +430,7 @@
             panelLogo.ResumeLayout(false);
             panelLogo.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

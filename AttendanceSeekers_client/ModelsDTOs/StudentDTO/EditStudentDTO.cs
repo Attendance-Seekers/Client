@@ -1,5 +1,5 @@
-﻿using Attendance_Student.Models;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
+using static AttendanceSeekers_client.ModelsDTOs.StatusEnum;
 
 namespace Attendance_Student.DTOs.StudentDTO
 {

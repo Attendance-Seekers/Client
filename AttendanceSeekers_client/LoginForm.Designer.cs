@@ -38,6 +38,7 @@
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label1.AutoSize = true;
             label1.Font = new Font("Showcard Gothic", 18F, FontStyle.Bold);
             label1.Location = new Point(346, 196);
@@ -48,6 +49,7 @@
             // 
             // label2
             // 
+            label2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label2.AutoSize = true;
             label2.Font = new Font("Showcard Gothic", 18F, FontStyle.Bold);
             label2.Location = new Point(336, 346);
@@ -58,6 +60,7 @@
             // 
             // Login_button
             // 
+            Login_button.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             Login_button.BackColor = Color.Navy;
             Login_button.Font = new Font("Showcard Gothic", 24F, FontStyle.Bold);
             Login_button.ForeColor = Color.Transparent;
@@ -71,6 +74,7 @@
             // 
             // label3
             // 
+            label3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label3.AutoSize = true;
             label3.Font = new Font("Showcard Gothic", 36F, FontStyle.Bold);
             label3.ForeColor = Color.DodgerBlue;
@@ -82,6 +86,7 @@
             // 
             // passTextBox
             // 
+            passTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             passTextBox.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold);
             passTextBox.ForeColor = Color.Silver;
             passTextBox.Location = new Point(538, 336);
@@ -92,9 +97,11 @@
             passTextBox.TabIndex = 7;
             passTextBox.Text = "Enter Password";
             passTextBox.Enter += passTextBox_Enter_1;
+            passTextBox.KeyDown += passTextBox_KeyDown;
             // 
             // userTextBox
             // 
+            userTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             userTextBox.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold);
             userTextBox.ForeColor = Color.Silver;
             userTextBox.Location = new Point(538, 186);
@@ -104,6 +111,7 @@
             userTextBox.TabIndex = 8;
             userTextBox.Text = "Enter UserName";
             userTextBox.Enter += userTextBox_Enter_1;
+            userTextBox.KeyDown += userTextBox_KeyDown;
             // 
             // LoginForm
             // 

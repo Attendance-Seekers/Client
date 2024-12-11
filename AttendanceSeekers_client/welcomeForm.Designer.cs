@@ -38,8 +38,8 @@
             // 
             // admin_button
             // 
-            admin_button.BackColor = Color.Black;
             resources.ApplyResources(admin_button, "admin_button");
+            admin_button.BackColor = Color.Black;
             admin_button.ForeColor = Color.Transparent;
             admin_button.Name = "admin_button";
             admin_button.UseVisualStyleBackColor = false;
@@ -47,8 +47,8 @@
             // 
             // teacher_button
             // 
-            teacher_button.BackColor = Color.Black;
             resources.ApplyResources(teacher_button, "teacher_button");
+            teacher_button.BackColor = Color.Black;
             teacher_button.ForeColor = Color.Transparent;
             teacher_button.Name = "teacher_button";
             teacher_button.UseVisualStyleBackColor = false;
@@ -56,8 +56,8 @@
             // 
             // parent_button
             // 
-            parent_button.BackColor = Color.Black;
             resources.ApplyResources(parent_button, "parent_button");
+            parent_button.BackColor = Color.Black;
             parent_button.ForeColor = Color.Transparent;
             parent_button.Name = "parent_button";
             parent_button.UseVisualStyleBackColor = false;
@@ -65,8 +65,8 @@
             // 
             // student_button
             // 
-            student_button.BackColor = Color.Black;
             resources.ApplyResources(student_button, "student_button");
+            student_button.BackColor = Color.Black;
             student_button.ForeColor = Color.Transparent;
             student_button.Name = "student_button";
             student_button.UseVisualStyleBackColor = false;
@@ -90,7 +90,6 @@
             Controls.Add(admin_button);
             Name = "welcomeForm";
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
